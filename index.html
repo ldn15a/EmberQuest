@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>testing pixi</title>
+</head>
+	<script src="lib/pixi.min.js"></script>
+<body>
+	<script type="text/javascript">
+	    let type = "WebGL"
+	    if(!PIXI.utils.isWebGLSupported()){
+	      type = "canvas"
+	    }
+
+	    PIXI.utils.sayHello(type)
+  	</script>
+
+  	<script id="main" src="lib/main.js">
+  	</script>
+
+  	<script id="Asset" src="lib/Asset.js">
+  	</script>
+
+  	<script id="Character" src="lib/Character.js">
+  	</script>
+
+  	<script id="Player" src="lib/Player.js">
+  	</script>
+
+  	<script id="FireParticle" src="lib/FireParticle.js">
+  	</script>
+
+  	<script id="Wall" src="lib/Wall.js">
+  	</script>
+</body>
+</html>
