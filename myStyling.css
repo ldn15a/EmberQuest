@@ -3,12 +3,18 @@ body {
     z-index: 1;
 }
 
-#textboxText {
+canvas {
     position: relative;
-    background-color: greenyellow;
-    top: 565px;
-    left: 50px;
-    width: 1180px;
-    height: 105px;
+    top: 0px;
+}
+
+#textboxText {
+    position: fixed;
+    background-color: #220000;
+    border-radius: 50px 0px 0px 50px;
+    top: 0px;
+    left: 880px;
+    width: 400px;
+    height: 720px;
     z-index: 2;
 }
