@@ -8,7 +8,7 @@ canvas {
     top: 0px;
 }
 
-#textboxText {
+#textboxContainer {
     position: fixed;
     background-color: #220000;
     border-radius: 50px 0px 0px 50px;

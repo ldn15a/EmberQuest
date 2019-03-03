@@ -7,7 +7,7 @@
 	</head>
 		<script src="lib/pixi.min.js"></script>
 	<body>
-		<div id="textboxText">
+		<div id="textboxContainer">
 			<div id="mainTextParent">
 				<div id="mainText">
 				</div>
