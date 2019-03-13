@@ -1,15 +1,75 @@
-brick, Wall, 400, 400
-brick, Wall, 464, 400
-brick, Wall, 528, 400
-brick, Wall, 592, 400
-brick, Wall, 592, 464
-brick, Wall, 592, 528
-brick, Wall, 654, 464
-brick, Wall, 718, 464
-brick, Wall, 336, 400
-brick, Wall, 273, 400
-brick, Wall, 592, 336
-brick, Wall, 654, 336
-brick, Wall, 718, 272
-Player, 464, 200
-John, 400, 339
+Create starting platform with cave:
+
+    Create left side of wall:
+        brick, Wall, 400, 400
+        brick, Wall, 336, 400
+        brick, Wall, 273, 400
+        brick, Wall, 209, 400
+        brick, Wall, 145, 400
+        brick, Wall, 81, 400
+
+        Create left most wall:
+            brick, Wall, 17, 400
+            brick, Wall, 17, 336
+            brick, Wall, 17, 272
+            brick, Wall, 17, 208
+            brick, Wall, 17, 144
+            brick, Wall, 17, 80
+
+    Create right side of wall:
+        brick, Wall, 464, 400
+        brick, Wall, 528, 400
+        brick, Wall, 654, 336
+        brick, Wall, 718, 336
+        brick, Wall, 782, 272
+        brick, Wall, 592, 400
+        brick, Wall, 592, 528
+        brick, Wall, 592, 336
+
+        Create right walk path:
+            brick, Wall, 592, 464
+            brick, Wall, 654, 464
+            brick, Wall, 718, 464
+            brick, Wall, 782, 464
+            brick, Wall, 846, 464
+            brick, Wall, 910, 464
+            brick, Wall, 974, 464
+            brick, Wall, 1038, 464
+            brick, Wall, 1102, 464
+            brick, Wall, 1166, 464
+            brick, Wall, 1230, 464
+            brick, Wall, 1294, 464
+            brick, Wall, 1358, 464
+            brick, Wall, 1422, 464
+            brick, Wall, 1486, 464
+            brick, Wall, 1550, 464
+            brick, Wall, 1614, 464
+            brick, Wall, 1678, 464
+            brick, Wall, 1742, 464
+
+        Create right most wall:
+            brick, Wall, 1742, 400
+            brick, Wall, 1742, 336
+            brick, Wall, 1742, 272
+            brick, Wall, 1742, 208
+            brick, Wall, 1742, 144
+            brick, Wall, 1742, 80
+
+Create Player:
+Player, 592, 200
+
+Create Left GateKeeper:
+GateKeeper, 400, 339
+
+Create Right GateKeeper:
+GateKeeper, 1358, 400
+
+Create Right NPC:
+John, 1678, 400
+
+Create Right Enemy:
+Enemy, 1166, 400
+
+Create jumping steps over gate:
+brick, Wall, 974, 75
+brick, Wall, 740, -128

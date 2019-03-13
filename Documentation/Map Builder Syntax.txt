@@ -1,0 +1,76 @@
+How to use the map builder:
+
+=====================================================================================================================================
+
+    To create a new map:
+
+        1) Open the "Maps" folder
+        2) Create a new .txt file named whatever you want that map/area to be called. (eg. Marsh.txt)
+            1) Make sure that the first letter of the file name is capital
+
+=====================================================================================================================================
+
+    To edit an existing map:
+
+        1) Open the "Maps" folder
+        2) Find the map file you want to edit and open it in a text editor. (Sublime, Notepad, Notepad++, etc. are all okay)
+        3) Put one object each line, with parameters for each object seperated with a comma and space aferwards
+            1) See object creation syntax for reference on how to create different objects
+
+=====================================================================================================================================
+
+    Object creation syntax:
+
+        1) There are syntax example of how to create objects below. The syntax is formated by the object you are creating, a closing
+            parentheses and then the syntax afterward.
+        2) The space after the closing parentheses should not be included when making an object
+        3) Brackets are included after a parameter to tell you the type of parameter it is
+
+-------------------------------------------------------------------------------------------------------------------------------------
+
+        Player) Player [text], X Cordinate [number], Y Cordinate [number]
+            Examples:
+                Player, 300, 450
+                Player, 218, 593
+
+-------------------------------------------------------------------------------------------------------------------------------------
+
+        NPC) NPC-Name [text], X Cordinate [number], Y Cordinate [number]
+            Examples:
+                NPC, 215, 413
+                NPC, 300, 464
+                John, 100, 245
+
+            NOTE: Pre-defined NPC's with names can be specified to create that specific NPC. Currently John is the only predefined NPC name and
+                    creates the same NPC as just saying NPC, but this will change later. Documention will be updated here as to all future
+                    available NPC names as more NPC are created and made ready.
+
+-------------------------------------------------------------------------------------------------------------------------------------
+
+        Wall) brick [text], Wall, X Cordinate [number], Y Cordinate [number]
+            Examples:
+                brick, Wall, 350, 450
+                brick, Wall, 246, 412
+
+            NOTE: When other types of walls are available you should be able to say things like: "wood, Wall, 400, 300", but for now only brick
+                    walls are available. This documention will be updated when more types of walls are available.
+
+-------------------------------------------------------------------------------------------------------------------------------------
+
+        Enemy) Enemy [text], X Cordinate [number], Y Cordinate [number]
+            Examples:
+                Enemy, 355, 1400
+                Enemy, 746, 400
+
+            NOTE: Different enemies will likely be a thing, but until those are created, you only get one basic enemy which you can make this way.
+
+=====================================================================================================================================
+
+    Good map building habits:
+
+        1) You should create blank lines in the map file to seperate one type of object from another and blocks of objects from other blocks
+            of objects.
+        2) You should also create comments in the map file to help you AND OTHERS keep track of what is what. These comments can be in English
+            can be on any line that doesn't contain an object
+        3) You should also indent to show and order for how things are organzied inside the map file
+        4) You can see a good examples of all of these things in the Maps/testMap.txt file
