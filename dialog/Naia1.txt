@@ -1,0 +1,34 @@
+Halt there, northerner. What brings you to Tenli Village?
+I'm in search of the Ember.
+I'm here to trade.
+That's no business of yours.
+Tenli Village?
+Ah, a pilgrim. You are on the right track. The Verdant Ember is enshrined in the heart of the marsh, a dangerous place for outsiders like you, I'm afraid.
+What makes it dangerous?
+What can you tell me about the village?
+May I enter the village?
+I see. Do you have a caravan on the way?
+Yes; it's about a half hour behind me.
+No, I'm just a curio trader.
+I am a gatekeeper, so it is business of mine.
+I'm in search of the Ember.
+I'm here to trade.
+Nonetheless, I prefer not to say.
+Were you not aware? These lands belong to Tribe Tenli. We are a peaceful tribe of weavers and carpenters, mostly. Our shrine also houses the Verdant Ember, a great honor. So again, what brings you here?
+I'm in search of the Ember.
+That's no business of yours.
+I am certain you have already noticed that the marsh is a very wet place, and it only becomes more so deeper in. The animals are also dangerous to flames, though not all of them mean to be. We marshfolk are blessed indeed to have our Ember, for without it, we would be constantly at odds with the nature around us.
+What can you tell me about the village?
+Can you tell me about the upper parts of the village?
+May I enter the village?
+The village is Tribe Tenli's home here in the marsh. The village floor, where outsiders are allowed, is where natives and visitors do business. It is the only place in the marsh that features stonework, as to accommodate flames from afar. We recently constructed a new council hall for entertaining foreign emissaries. The village has become too busy for my preference, but perhaps that will be to your liking.
+What makes the marsh dangerous?
+What about the upper parts of the village?
+May I enter the village?
+It is a serene place where we make our homes in the trees, practice our livelihoods of wood shaping and vine weaving, perform our rituals, gather to vote on village interests... it is a wonderful place to live. We cannot allow other flames there, of course, for their presence would harm the trees.
+What makes the marsh dangerous?
+May I enter the village?
+Certainly. I will open the gate for you.
+Very well. You may enter the village; I will open the gate for your caravan when it arrives. You can find the marketplace in the west of the village, past the council hall.
+Very well. You may enter the village. If you've no platform from which to sell your wares, you'll have to try to find an open spot in the marketplace.
+Then I cannot let you into the village. Wherever you are going, you will have to go around.
