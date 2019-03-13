@@ -58,11 +58,11 @@ Create starting platform with cave:
 Create Player:
 Player, 592, 200
 
-Create Left GateKeeper:
-GateKeeper, 400, 339
+Create Left Naia2:
+Naia2, 400, 339
 
-Create Right GateKeeper:
-GateKeeper, 1358, 400
+Create Right Naia1:
+Naia1, 1358, 400
 
 Create Right NPC:
 John, 1678, 400
