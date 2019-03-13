@@ -1,1 +1,15 @@
-brick Wall 642 385
+brick, Wall, 400, 400
+brick, Wall, 464, 400
+brick, Wall, 528, 400
+brick, Wall, 592, 400
+brick, Wall, 592, 464
+brick, Wall, 592, 528
+brick, Wall, 654, 464
+brick, Wall, 718, 464
+brick, Wall, 336, 400
+brick, Wall, 273, 400
+brick, Wall, 592, 336
+brick, Wall, 654, 336
+brick, Wall, 718, 272
+Player, 464, 200
+John, 400, 339
