@@ -4,7 +4,7 @@ Create starting platform with cave:
     brick, Wall, repeatNeg (592,8,64), 400
 
         Create left most wall:
-            brick, Wall, 17, repeatNeg (400,6,64)
+            brick, Wall, 17, repeatNeg (400,7,64)
 
     Create right side of wall:
         brick, Wall, 654, 336
