@@ -14,7 +14,7 @@ How to use the map builder:
 
         1) Open the "Maps" folder
         2) Find the map file you want to edit and open it in a text editor. (Sublime, Notepad, Notepad++, etc. are all okay)
-        3) Put one object each line, with parameters for each object seperated with a comma and space aferwards
+        3) Put one object each line, with parameters for each object seperated with a comma and space afterwards
             1) See object creation syntax for reference on how to create different objects
 
 =====================================================================================================================================
@@ -72,5 +72,11 @@ How to use the map builder:
             of objects.
         2) You should also create comments in the map file to help you AND OTHERS keep track of what is what. These comments can be in English
             can be on any line that doesn't contain an object
-        3) You should also indent to show and order for how things are organzied inside the map file
+		Examples:
+			This is a comment
+			Enemy, 355, 1400
+			That line above wasn't a comment, but this is.
+			This is also a valid comment.
+				and so is this!
+        3) You should also indent to show and order for how things are organized inside the map file
         4) You can see a good examples of all of these things in the Maps/testMap.txt file
