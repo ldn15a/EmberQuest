@@ -1,0 +1,65 @@
+Create starting platform with cave:
+
+    Create left side of wall:
+    brick, Wall, repeatNeg (592,8,64), 400
+
+        Create left most wall:
+            brick, Wall, 17, repeatNeg (400,7,64)
+
+    Create right side of wall:
+        brick, Wall, 654, 336
+        brick, Wall, 718, 336
+        brick, Wall, 782, 272
+        brick, Wall, 592, 528
+        brick, Wall, 592, 336
+
+        Create right walk path:
+            brick, Wall, repeatPos (592,18,64), 464
+
+        Create right most wall:
+            brick, Wall, 1742, repeatNeg (400,15,64)
+
+Make a box:
+brick, Wall, repeatNeg (1475,4,64), repeatNeg (100,4,64)
+
+Create Player:
+Player, 656, 0
+
+Create Left Naia2:
+Naia2, -1526, -191
+
+Create Right Naia1:
+Naia1, 1358, 400
+
+Create Right NPC:
+John, 1678, 400
+
+Create Right Enemy:
+Enemy, 1166, 400
+
+Create jumping steps over gate:
+brick, Wall, repeatNeg (1038,1,64), 75
+
+jumping step Wall:
+brick, Wall, 868, repeatNeg (-64,2,64)
+
+high path:
+brick, Wall, repeatNeg (676,15,64), -128
+brick, Wall, repeatNeg (-284,2,80), -128
+brick, Wall, repeatNeg (-524,3,96), -128
+brick, Wall, repeatNeg (-812,3,110), -128
+brick, Wall, repeatNeg (-1142,7,64), -128
+
+high Enemy:
+Enemy, -1032, -191
+
+left low enemy:
+Enemy, 100, 0
+
+arrow:
+brick, Wall, 328, 0
+brick, Wall, 264, 64
+brick, Wall, 200, 128
+brick, Wall, repeatPos (328,4,64), 128
+brick, Wall, 264, 196
+brick, Wall, 328, 260
