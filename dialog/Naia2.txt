@@ -12,7 +12,7 @@ b.	“That’s really not necessary of you.” (Go to 4)
 
 else if(enteredVillage && expectedCaravan)
 1.	“Ah, there you are. I never spotted your caravan. You ought to stay and wait for it.”
-a.	“Actually, I lied about the caravan.” (karma > 2, go to 2; else go to 3)
+a.	“Actually, I lied about the caravan.” (if karma > 1, go to 2; else go to 3)
 b.	“I suppose you’re right. I’ll head back into town.” (End)
 c.	“There’s something I need to attend to outside of town.” (Go to 4)
 2.	“Well, that explains that. (sigh) I ought to take you to the council for judgment, but I will show mercy this once. What are you really doing out here, then?”
@@ -66,7 +66,7 @@ b.	“Hidden treasure.” (Go to 7)
 c.	“It’s… something personal.” (Go to 9)
 4.	“The heart of the marsh is quite a dangerous place to explore, outsider. I will come with you, just to make sure you are safe in the case of an emergency.”
 a.	“Okay, sounds good.” (naiaPartnered = true) (End)
-b.	“I don’t need you to babysit me.” (Go 6)
+b.	“I don’t need you to babysit me.” (Go to 6)
 5.	“So be it, but I will be keeping a close watch on you.” (naiaPartnered = false) (End)
 6.	“Even so, it would be irresponsible to go it alone. I will stay back and let you go at your own pace, but I insist on coming along, just in case something goes badly.” (naiaPartnered = false) (End)
 7.	“You are unlikely to find anything an outsider would consider ‘treasure’ here. If you seek wealth, you will surely fit in better elsewhere. The marsh is not the place for you.”
@@ -78,6 +78,6 @@ b.	“Thanks, but I don’t need a guide.” (Go to 6)
 9.	“Odd that you should seek such a thing here. Let me come with you; the heart of the marsh is a dangerous place, especially for outsiders.”
 a.	“Okay, let’s go.” (naiaPartnered = true) (End)
 b.	“I’d rather do this on my own.” (Go to 6)
-c.	“I understand, but this journey is very special to me. I need to do this alone.” (if karma is neutral or bad, go to 10; if good go to 11)
+c.	“I understand, but this journey is very special to me. I need to do this alone.” (if karma < 1, go to 10; else go to 11)
 10.	“Sorry, but I cannot make an exception. I will stay out of your way, but I am coming all the same.” (naiaPartnered = false) (End)
-11.	“Well…” (sigh) “If that is truly how it is, I will allow you to go alone this once. Take this. You will need it.” (Gives Naia’s Charm) “I only hope you understand the weight of what you are doing.” (End)
+11.	“Well…” (sigh) “If that is truly how it is, I will allow you to go alone this once. Take this. You will need it.” (naiasCharm = true) “I only hope you understand the weight of what you are doing.” (End)
