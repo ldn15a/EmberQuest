@@ -52,9 +52,9 @@ b.	“I don’t need you to babysit me.” (Go to 7)
 7.	“Not to babysit you, no, just to watch your back. I’ll keep my distance as not to disturb you.” (naiaPartnered = false) (End)
 
 else
-1.	“Hm. I recognize you. You are that secretive one. Just what are you doing this deep in the marsh?”
-a.	“If you must know, I’m searching for the Verdant Ember.” (Go to 2)
-b.	“There’s something I’m looking for in the marsh.” (Go to 3)
+		 	 	     1.	“Hm. I recognize you. You are that secretive one. Just what are you doing this deep in the marsh?”
+     a.	“If you must know, I’m searching for the Verdant Ember.” (Go to 2)
+ b.	“There’s something I’m looking for in the marsh.” (Go to 3)
 c.	“I’m just exploring.” (Go to 4)
 d.	“As if I’d tell you.” (Go to 5)
 2.	“I see. That is an admirable but perilous venture. As an outsider, you ought to have a guide as you go deeper into the marsh. I will come with you to show you the way.”
