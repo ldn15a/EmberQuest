@@ -15,9 +15,11 @@
 
 			<div id="optionsParent">
 			</div>
+			
 		</div>
 		
-		<?php require "scripts.html";?>    
+		<?php require "audiofiles.html";?>
+		<?php require "scripts.html";?>
 	
 	</body>
 </html>
