@@ -25,15 +25,6 @@ Make a box:
 Create Player:
     Player, 656, 0
 
-Create Left Naia2:
-Naia2, -1526, -191
-
-Create Right Naia1:
-Naia1, 1358, 400
-
-Create Right NPC:
-John, 1678, 400
-
 Create Right Enemy:
     Enemy, 1166, 400
 

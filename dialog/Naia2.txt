@@ -1,80 +1,83 @@
-“Hello again. Still on the pilgrim’s trail, I take it?”
-“Yep, still at it.”
-“Aren’t you supposed to be watching the front gate?"
-“Then I shall accompany you on your journey. It is a hard road ahead of you; the least I can do is offer some aid.”
-“Thank you. Let’s go, then.”
-“That’s really not necessary of you.”
-“My watch just ended. And if you plan to venture deeper into the marsh, I would like to help you on your journey.”
-“Thank you. Let’s go, then.”
-“That’s really not necessary of you.”
-“Not necessary, no, but it would be irresponsible of me to let an outsider head into the heart of the marsh unattended. You could die, and I cannot have that weighing on my conscience. Go on, now; I will follow from a distance.”
+if(toldTruth)
+1.	â€œHello again. Still on the pilgrimâ€™s trail, I take it?â€
+a.	â€œYep, still at it.â€ (Go to 2)
+b.	â€œArenâ€™t you supposed to be watching the front gate?â€ (Go to 3)
+2.	â€œThen I shall accompany you on your journey. It is a hard road ahead of you; the least I can do is offer some aid.â€
+a.	â€œThank you. Letâ€™s go, then.â€ (naiaPartnered = true) (End)
+b.	â€œThatâ€™s really not necessary of you.â€ (Go to 4)
+3.	â€œMy watch just ended. And if you plan to venture deeper into the marsh, I would like to help you on your journey.â€
+a.	â€œThank you. Letâ€™s go, then.â€ (naiaPartnered = true) (End)
+b.	â€œThatâ€™s really not necessary of you.â€ (Go to 4)
+4.	â€œNot necessary, no, but it would be irresponsible of me to let an outsider head into the heart of the marsh unattended. You could die, and I cannot have that weighing on my conscience. Go on, now; I will follow from a distance.â€ (naiaPartnered = false) (End)
 
-“Ah, there you are. I never spotted your caravan. You ought to stay and wait for it.”
-“Actually, I lied about the caravan.”
-“I suppose you’re right. I’ll head back into town.”
-“There’s something I need to attend to outside of town.”
-“Well, that explains that." (sigh) "I ought to take you to the council for judgment, but I will show mercy this once. What are you really doing out here, then?”
-“I’m in search of the Verdant Ember.”
-“It’s a private matter. I prefer not to talk about it.”
-“I was beginning to suspect as much. I am taking you back to the council for judgment — since you came clean, I will see that your sentence is light.”
-“Really, now? You need to attend something in the heart of the marsh?”
-“Well… no.”
-“Someone stole something from me, and I saw him fleeing this way.”
-“That is what I thought. Come along now; you are going before the council to be judged.”
-“Then why did you not tell a guard sooner? No matter — I will come with you. We will bring the thief to justice.”
-“Ah, I see. A noble endeavor. It is an arduous journey, one many fail to complete. I will go with you as a guide; the marsh is dangerous to outsiders, and I will not let you march headlong into it without help.”
-“Thank you. Let’s get going, then.”
-“Thanks, but this is something I need to do alone.”
-“Be that as it may, if you are heading deeper into the marsh, let me come with you. It is unsafe for outsiders.”
-“I would rather tend to this on my own.”
-Very well. Let’s go.”
-(sigh) "I know I am intruding upon your private business, but it would be irresponsible for me to let you venture deeper all alone. You will have to tolerate me for now — I will keep my distance as not to interfere in your business.”
-“I understand. I will not interfere with your pilgrimage, but I will continue to follow at a distance, just in case something goes awry.”
+else if(enteredVillage && expectedCaravan)
+1.	â€œAh, there you are. I never spotted your caravan. You ought to stay and wait for it.â€
+a.	â€œActually, I lied about the caravan.â€ (if karma > 1, go to 2; else go to 3)
+b.	â€œI suppose youâ€™re right. Iâ€™ll head back into town.â€ (End)
+c.	â€œThereâ€™s something I need to attend to outside of town.â€ (Go to 4)
+2.	â€œWell, that explains that. (sigh) I ought to take you to the council for judgment, but I will show mercy this once. What are you really doing out here, then?â€
+a.	â€œIâ€™m in search of the Verdant Ember.â€ (Go to 7)
+b.	â€œItâ€™s a private matter. I prefer not to talk about it.â€ (Go to 8)
+3.	â€œI was beginning to suspect as much. I am taking you back to the council for judgment â€” since you came clean, I will see that your sentence is light.â€ (End)
+4.	â€œReally, now? You need to attend something in the heart of the marsh?â€
+a.	â€œWellâ€¦ no.â€ (Go to 5)
+b.	â€œSomeone stole something from me, and I saw him fleeing this way.â€ (Go to 6)
+5.	â€œThat is what I thought. Come along now; you are going before the council to be judged.â€ (End)
+6.	â€œThen why did you not tell a guard sooner? No matter â€” I will come with you. We will bring the thief to justice.â€ (naiaPartnered = true) (End)
+7.	â€œAh, I see. A noble endeavor. It is an arduous journey, one many fail to complete. I will go with you as a guide; the marsh is dangerous to outsiders, and I will not let you march headlong into it without help.â€
+a.	â€œThank you. Letâ€™s get going, then.â€ (naiaPartnered = true) (End)
+b.	â€œThanks, but this is something I need to do alone.â€ (Go to 10)
+8.	â€œBe that as it may, if you are heading deeper into the marsh, let me come with you. It is unsafe for outsiders.â€
+a.	â€œI would rather tend to this on my own.â€ (Go to 9)
+b.	Very well. Letâ€™s go.â€ (naiaPartnered = true) (End)
+9.	â€œ(sigh) I know I am intruding upon your private business, but it would be irresponsible for me to let you venture deeper all alone. You will have to tolerate me for now â€” I will keep my distance as not to interfere in your business.â€ (naiaPartnered = false) (End)
+10.	â€œI understand. I will not interfere with your pilgrimage, but I will continue to follow at a distance, just in case something goes awry.â€ (naiaPartnered = false) (End)
 
-“Oh, hello. What are you doing outside of town?”
-“I’m searching for the Verdant Ember.”
-“Just exploring the marsh.”
-“That’s none of your concern.”
-“The Ember? You should have told me sooner. The marsh is dangerous for outsiders. Let me come with you; I can help you weather the dangers ahead.”
-“Alright, let’s go.”
-“I’d rather go it alone.”
-“I see. We can explore together, then; the marsh is beautiful but dangerous for those not blessed by the Verdant Ember. I will be your guide.”
-“Good by me. Let’s go.”
-“I don’t think I need a guide.”
-“Perhaps not, but the marsh is dangerous for outsiders. If you venture deeper in without guidance from a native, you could fall prey to one of its many hazards. If you insist on going anyway, I cannot let you go alone.”
-“Fair enough. Let’s go.”
-“I don’t need you to babysit me.”
-“I can keep my distance if you prefer, but someone should be there in case anything happens. If you were to get hurt or killed, I would feel responsible.”
-“So be it, but I will still accompany you at a distance. At least someone will be there if anything happens to you.”
-“Not to babysit you, no, just to watch your back. I’ll keep my distance as not to disturb you.”
+else if(enteredVillage)
+1.	â€œOh, hello. What are you doing outside of town?â€
+a.	â€œIâ€™m searching for the Verdant Ember.â€ (Go to 2)
+b.	â€œJust exploring the marsh.â€ (Go to 3)
+c.	â€œThatâ€™s none of your concern.â€ (Go to 4)
+2.	â€œThe Ember? You should have told me sooner. The marsh is dangerous for outsiders. Let me come with you; I can help you weather the dangers ahead.â€
+a.	â€œAlright, letâ€™s go.â€ (naiaPartnered = true) (End)
+b.	â€œIâ€™d rather go it alone.â€ (Go to 5)
+3.	â€œI see. We can explore together, then; the marsh is beautiful but dangerous for those not blessed by the Verdant Ember. I will be your guide.â€
+a.	â€œGood by me. Letâ€™s go.â€ (naiaPartnered = true) (End)
+b.	â€œI donâ€™t think I need a guide.â€ (Go to 6)
+4.	â€œPerhaps not, but the marsh is dangerous for outsiders. If you venture deeper in without guidance from a native, you could fall prey to one of its many hazards. If you insist on going anyway, I cannot let you go alone.â€
+a.	â€œFair enough. Letâ€™s go.â€ (naiaPartnered = true) (End)
+b.	â€œI donâ€™t need you to babysit me.â€ (Go to 7)
+5.	â€œI can keep my distance if you prefer, but someone should be there in case anything happens. If you were to get hurt or killed, I would feel responsible.â€ (naiaPartnered = false) (End)
+6.	â€œSo be it, but I will still accompany you at a distance. At least someone will be there if anything happens to you.â€ (naiaPartnered = false) (End)
+7.	â€œNot to babysit you, no, just to watch your back. Iâ€™ll keep my distance as not to disturb you.â€ (naiaPartnered = false) (End)
 
-“Hm. I recognize you. You are that secretive one. Just what are you doing this deep in the marsh?”
-“If you must know, I’m searching for the Verdant Ember.”
-“There’s something I’m looking for in the marsh.”
-“I’m just exploring.”
-“As if I’d tell you.”
-“I see. That is an admirable but perilous venture. As an outsider, you ought to have a guide as you go deeper into the marsh. I will come with you to show you the way.”
-“Thank you. Let’s go.”
-“I would rather do this alone.”
-“And what might that be?”
-“The Verdant Ember.”
-“Hidden treasure.”
-“It’s… something personal.”
-“The heart of the marsh is quite a dangerous place to explore, outsider. I will come with you, just to make sure you are safe in the case of an emergency.”
-“Okay, sounds good.”
-“I don’t need you to babysit me.”
-“So be it, but I will be keeping a close watch on you.”
-“Even so, it would be irresponsible to go it alone. I will stay back and let you go at your own pace, but I insist on coming along, just in case something goes badly.”
-“You are unlikely to find anything an outsider would consider ‘treasure’ here. If you seek wealth, you will surely fit in better elsewhere. The marsh is not the place for you.”
-“I’m going in anyway.”
-“Actually, the treasure I’m looking for is the Verdant Ember."
-“Oh, I see. Forgive me, then, outsider; I misjudged you. If you seek the Ember, I can guide you there.”
-“Alright, then. Let’s go.”
-“Thanks, but I don’t need a guide.”
-“Odd that you should seek such a thing here. Let me come with you; the heart of the marsh is a dangerous place, especially for outsiders.”
-“Okay, let’s go.”
-“I’d rather do this on my own.”
-“I understand, but this journey is very special to me. I need to do this alone.”
-“Sorry, but I cannot make an exception. I will stay out of your way, but I am coming all the same.”
-“Well…” (sigh) “If that is truly how it is, I will allow you to go alone this once. Take this. You will need it.”
-“I only hope you understand the weight of what you are doing.”
+else
+		 	 	     1.	â€œHm. I recognize you. You are that secretive one. Just what are you doing this deep in the marsh?â€
+     a.	â€œIf you must know, Iâ€™m searching for the Verdant Ember.â€ (Go to 2)
+ b.	â€œThereâ€™s something Iâ€™m looking for in the marsh.â€ (Go to 3)
+c.	â€œIâ€™m just exploring.â€ (Go to 4)
+d.	â€œAs if Iâ€™d tell you.â€ (Go to 5)
+2.	â€œI see. That is an admirable but perilous venture. As an outsider, you ought to have a guide as you go deeper into the marsh. I will come with you to show you the way.â€
+a.	â€œThank you. Letâ€™s go.â€ (naiaPartnered = true) (End)
+b.	â€œI would rather do this alone.â€ (Go to 6)
+3.	â€œAnd what might that be?â€
+a.	â€œThe Verdant Ember.â€ (Go to 2)
+b.	â€œHidden treasure.â€ (Go to 7)
+c.	â€œItâ€™sâ€¦ something personal.â€ (Go to 9)
+4.	â€œThe heart of the marsh is quite a dangerous place to explore, outsider. I will come with you, just to make sure you are safe in the case of an emergency.â€
+a.	â€œOkay, sounds good.â€ (naiaPartnered = true) (End)
+b.	â€œI donâ€™t need you to babysit me.â€ (Go to 6)
+5.	â€œSo be it, but I will be keeping a close watch on you.â€ (naiaPartnered = false) (End)
+6.	â€œEven so, it would be irresponsible to go it alone. I will stay back and let you go at your own pace, but I insist on coming along, just in case something goes badly.â€ (naiaPartnered = false) (End)
+7.	â€œYou are unlikely to find anything an outsider would consider â€˜treasureâ€™ here. If you seek wealth, you will surely fit in better elsewhere. The marsh is not the place for you.â€
+a.	â€œIâ€™m going in anyway.â€ (Go to 5)
+b.	â€œActually, the treasure Iâ€™m looking for is the Verdant Ember.â€ (Go to 8)
+8.	â€œOh, I see. Forgive me, then, outsider; I misjudged you. If you seek the Ember, I can guide you there.â€
+a.	â€œAlright, then. Letâ€™s go.â€ (naiaPartnered = true) (End)
+b.	â€œThanks, but I donâ€™t need a guide.â€ (Go to 6)
+9.	â€œOdd that you should seek such a thing here. Let me come with you; the heart of the marsh is a dangerous place, especially for outsiders.â€
+a.	â€œOkay, letâ€™s go.â€ (naiaPartnered = true) (End)
+b.	â€œIâ€™d rather do this on my own.â€ (Go to 6)
+c.	â€œI understand, but this journey is very special to me. I need to do this alone.â€ (if karma < 1, go to 10; else go to 11)
+10.	â€œSorry, but I cannot make an exception. I will stay out of your way, but I am coming all the same.â€ (naiaPartnered = false) (End)
+11.	â€œWellâ€¦â€ (sigh) â€œIf that is truly how it is, I will allow you to go alone this once. Take this. You will need it.â€ (naiasCharm = true) â€œI only hope you understand the weight of what you are doing.â€ (End)
