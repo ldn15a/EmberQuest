@@ -1,4 +1,4 @@
-Greetings, <strong>friend</strong>. I see that you <span style="color:red"><b>aren't</b></span> from around these parts. My <mark>name</mark> is <i>Eresea</i>.
+Greetings, <strong>friend</strong>. I see that you <span style="color:red;font-size:30px;">aren't</span> from around these parts. My <mark>name</mark> is <i>Eresea</i>.
 You picked a fine day to stumble out here. A bit wet and sad.
 You're looking for trouble, aren't you?
 No, I'm on a quest to find the Ember.
