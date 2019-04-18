@@ -1,0 +1,7 @@
+1. "Welcome to our village, visitor! I hope it is entirely to your liking."
+  "It's lovely, thank you." (Go to 2)
+  "I've certainly been to worse places." (Go to 3)
+  "It's all wet and dumpy." (Go to 4)
+2. "I am so glad to hear it." (End)
+3. "Then it is good that you are here now. I hope you will not have to revisit those places." (End)
+4. "Oh, I am so sorry you think so. I know the marsh can be inhospitable to outsiders. I hope it is not too unpleasant for you." (End)
