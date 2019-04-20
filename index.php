@@ -2,8 +2,8 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>testing pixi</title>
-		<link rel="stylesheet" type="text/css" href="myStyling.css">
+		<title>Ember Quest</title>
+		<link rel="stylesheet" type="text/css" href="gamePage.css">
 	</head>
 		<script src="lib/pixi.min.js"></script>
 	<body>
