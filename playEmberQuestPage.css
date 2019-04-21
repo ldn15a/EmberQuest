@@ -1,0 +1,44 @@
+#playEmberQuestButton {
+	position: relative;
+	width: 200px;
+	height: 50px;
+	top: -450px;
+	left: 200px;
+}
+
+#articleContainer {
+	background-color: #555555;
+	width: 600px;
+	height: 900px;
+	margin-left: 25%;
+}
+
+#articleTitle {
+	position: relative;
+	background-color: #334433;
+	font-size: 28px;
+	color: white;
+	width: 550px;
+	margin: 25px;
+	text-align: center;
+	line-height: 200%;
+	top: 25px;
+
+}
+
+#articleContent {
+	position: relative;
+	background-color: #334033;
+	font-size: 14px;
+	color: white;
+	width: 500px;
+	line-height: 200%;
+	height: 700px;
+	margin-left: 50px;
+	top: 25px;
+	text-align: center;
+}
+
+body {
+	background-color: #333333;
+}

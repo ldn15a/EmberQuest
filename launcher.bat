@@ -1,6 +1,6 @@
 SET pixiProjectPath=%~dp0
 
-start firefox --new-window "localhost:8000"
+start firefox --new-window "index.html"
 
 cd %pixiProjectPath%
 
