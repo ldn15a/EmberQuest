@@ -7,7 +7,7 @@
   "What makes it dangerous?" (Go to 6)
   "What can you tell me about the village?" (Go to 7)
   "May I enter the village?" (Go to 9)
-3. "I see. Do you have a caravan on the way?" (Return to 1)
+3. "I see. Do you have a caravan on the way?"
   "Yes; it's about a half hour behind me." (Go to 10)
   "No, I'm just a curio trader." (Go to 11)
 4. "I am a gatekeeper, so it is business of mine."
