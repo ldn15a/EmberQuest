@@ -1,0 +1,7 @@
+1."I wish the coal vendors would come more often. I have that craving that only coal can satisfy."
+  (if Wick has coal) "I have some coal you could eat. Here." (+ small karma) (Go to 2)
+  "What's wrong with Tenli food?" (Go to 3)
+  "That's rough." (Go to 4)
+2. "My thanks, friend! You are a lifesaver." (Munches coal) "Mmm, delicious." (End)
+3. "Nothing is <i>wrong</i> with it. It just lacks that mineral flavor I crave." (End)
+4. "Yes, it is. Rough and crunchy and absolutely scrumptious." (End)
