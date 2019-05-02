@@ -1,0 +1,236 @@
+Naia
+
+First Encounter
+
+Context: Wick has traversed the beginning of the marsh and is approaching Tenli Village. Naia has been observing his approach.
+1. "Halt there, northerner. What brings you to Tenli Village?"
+  "I'm in search of the Ember." (Go to 2)
+  "I'm here to trade." (Go to 3)
+  "That's no business of yours." (Go to 4)
+  "Tenli Village?" (Go to 5)
+2. "Ah, a pilgrim. You are on the right track. The Verdant Ember is enshrined in the heart of the marsh, a dangerous place for outsiders like you, I am afraid." (toldTruth = true)
+  "What makes it dangerous?" (Go to 6)
+  "What can you tell me about the village?" (Go to 7)
+  "May I enter the village?" (Go to 9)
+3. "I see. Do you have a caravan on the way?"
+  "Yes; it's about a half hour behind me." (Go to 10)
+  "No, I'm just a curio trader." (Go to 11)
+4. "I am a gatekeeper, so it is business of mine."
+  "I'm in search of the Ember." (Go to 2)
+  "I'm here to trade." (Go to 3)
+  "Nonetheless, I prefer not to say." (Go to 12)
+5. "Were you not aware? These lands belong to Tribe Tenli. We are a peaceful tribe of weavers and carpenters. Our shrine also houses the Verdant Ember, a great honor. So again, what brings you here?
+  "I'm in search of the Ember." (Go to 2)
+  "That's no business of yours." (Go to 4)
+6. "I am certain you have already noticed that the marsh is a very wet place, and it only becomes more so deeper in. The animals are also dangerous to flames, though not all of them mean to be. We marshfolk are blessed indeed to have our Ember, for without it, we would be constantly at odds with the nature around us." (marshDangerKnown = true)
+if(villageKnowledge == 0) "What can you tell me about the village?" (Go to 7)
+if(villageKnowledge == 1) "Can you tell me about the upper parts of the village?" (Go to 8)
+"May I enter the village?" (Go to 9)
+7. "The village is Tribe Tenli's home here in the marsh. The village floor, where outsiders are allowed, is where natives and visitors do business. It is the only place in the marsh that features stonework, as to accommodate flames from afar. We recently constructed a new council hall for entertaining foreign emissaries. The village has become too busy for my preference, but perhaps that will be to your liking." (villageKnowledge = 1)
+if(!marshDangerKnown) "What makes the marsh dangerous?" (Go to 6)
+"What about the upper parts of the village?" (Go to 8)
+"May I enter the village?" (Go to 9)
+8. "It is a serene place where we make our homes in the trees, practice our livelihoods of wood shaping and vine weaving, perform our rituals, gather to vote on village interests... it is a wonderful place to live. We cannot allow other flames there, of course, for their presence would harm the trees." (villageKnowledge = 2)
+if(!marshDangerKnown) "What makes the marsh dangerous?" (Go to 6)
+"May I enter the village?" (Go to 9)
+9. "Certainly. I will open the gate for you." (enteredVillage = true) (End)
+10. "That must have been difficult; I understand that the road is in rather poor condition due to the recent storm. You may enter the village; I will open the gate for your caravan when it arrives. You can find the marketplace in the center of the village, underneath the council pavilion." (enteredVillage = true, expectedCaravan = true) (End)
+11. "Very well. You may enter the village. If you have no platform from which to sell your wares, you will have to try to find an open spot in the lesser market on the east side of the village." (enteredVillage = true) (End)
+12. "Then I cannot let you into the village. Wherever you are going, you will have to go around." (End)
+
+Second Encounter
+
+Context: Wick has just reached the opposite side of Tenli village, either by going through it or by going around.
+if(toldTruth)
+1. "Hello again. Still on the pilgrim's trail, I take it?"
+  "Yep, still at it." (Go to 2)
+  "Aren't you supposed to be watching the front gate?" (Go to 3)
+2. "Then I shall accompany you on your journey. It is a hard road ahead of you; the least I can do is offer some aid."
+  "Thank you. Let's go, then." (naiaPartnered = true) (End)
+  "That's really not necessary of you." (Go to 4)
+3. "My watch just ended. And if you plan to venture deeper into the marsh, I would like to help you on your journey."
+  "Thank you. Let's go, then." (naiaPartnered = true) (End)
+  "That's really not necessary of you." (Go to 4)
+4. "Not necessary, no, but it would be irresponsible of me to let an outsider head into the heart of the marsh unattended. You could die, and I cannot have that weighing on my conscience. Go on, now; I will follow from a distance." (naiaPartnered = false) (End)
+
+else if(enteredVillage && expectedCaravan)
+1. "Ah, there you are. I never spotted your caravan. You ought to check on it; it might have been stranded due to the recent flooding."
+  "Actually, I lied about the caravan." (If karma > 1, go to 2; else go to 3)
+  "I suppose you're right. I'll head back into town." (End)
+  "There's something I need to attend to outside of town." (Go to 4)
+2. "Well, that explains that." <i>sigh</i> "I ought to take you to the council for judgment, but I will show mercy this once. What are you really doing out here, then?"
+  "I'm in search of the Verdant Ember." (Go to 7)
+  "It's a private matter. I prefer not to talk about it." (Go to 8)
+3. "I was beginning to suspect as much. I am taking you back to the council for judgment — since you came clean, I will see that your sentence is light." (End)
+4. "Really, now? You need to attend something in the heart of the marsh?"
+  "Well... no." (Go to 5)
+  "Someone stole something from me, and I saw him fleeing this way." (Go to 6)
+5. "That is what I thought. Come along now; you are going before the council to be judged." (End)
+6. "Then why did you not tell a guard sooner? No matter — I will come with you. If what you say is true, we will bring the thief to justice." (naiaPartnered = true) (End)
+7. "Ah, I see. A noble endeavor. It is an arduous journey, one many fail to complete. I will go with you as a guide; the marsh is dangerous to outsiders, and I will not let you march headlong into it without help."
+  "Thank you. Let's get going, then." (naiaPartnered = true) (End)
+  "Thanks, but this is something I need to do alone." (Go to 10)
+8. "Be that as it may, if you are heading deeper into the marsh, let me come with you. It is unsafe for outsiders."
+  "I would rather tend to this on my own." (Go to 9)
+  "Very well. Let's go." (naiaPartnered = true) (End)
+9. <i>sigh</i> "I know I am intruding upon your private business, but it would be irresponsible for me to let you venture deeper all alone. You will have to tolerate me for now — I will keep my distance as not to interfere in your business." (naiaPartnered = false) (End)
+10. "I understand. I will not interfere with your pilgrimage, but I will continue to follow at a distance, just in case something goes awry." (naiaPartnered = false) (End)
+
+else if(enteredVillage)
+1. "Oh, hello. What are you doing outside of town?"
+  "I'm searching for the Verdant Ember." (Go to 2)
+  "Just exploring the marsh." (Go to 3)
+  "That's none of your concern." (Go to 4)
+2. "The Ember? You should have told me sooner. The marsh is dangerous for outsiders. Let me come with you; I can help you weather the dangers ahead."
+  "Alright, let's go." (naiaPartnered = true) (End)
+  "I'd rather go it alone." (Go to 5)
+3. "I see. We can explore together, then; the marsh is beautiful but dangerous for those not blessed by the Verdant Ember. I will be your guide."
+  "Good by me. Let's go." (naiaPartnered = true) (End)
+  "I don't think I need a guide." (Go to 6)
+4. "Perhaps not, but the marsh is dangerous for outsiders. If you venture deeper in without guidance from a native, you could fall prey to one of its many hazards. If you insist on going anyway, I cannot let you go alone."
+  "Fair enough. Let's go." (naiaPartnered = true) (End)
+  "I don't need you to babysit me." (Go to 7)
+5. "I can keep my distance if you prefer, but someone should be there in case anything happens. If you were to get hurt or killed, I would feel responsible." (naiaPartnered = false) (End)
+6. "So be it, but I will still accompany you at a distance. At least someone will be there if anything happens to you." (naiaPartnered = false) (End)
+7. "Not to babysit you, no, just to watch your back. I will keep my distance as not to disturb you." (naiaPartnered = false) (End)
+
+else
+1. "Hm. I recognize you. You are that secretive one. Just what are you doing this deep in the marsh?"
+  "If you must know, I'm searching for the Verdant Ember." (Go to 2)
+  "There's something I'm looking for in the marsh." (Go to 3)
+  "I'm just exploring." (Go to 4)
+  "As if I'd tell you." (Go to 5)
+2. "I see. That is an admirable but perilous venture. As an outsider, you ought to have a guide as you go deeper into the marsh. I will come with you to show you the way."
+  "Thank you. Let's go." (naiaPartnered = true) (End)
+  "I would rather do this alone." (Go to 6)
+3. "And what might that be?"
+  "The Verdant Ember." (Go to 2)
+  "Hidden treasure." (Go to 7)
+  "It's... something personal." (Go to 9)
+4. "The heart of the marsh is quite a dangerous place to explore, outsider. I will come with you, just to make sure you are safe in the case of an emergency."
+  "Okay, sounds good." (naiaPartnered = true) (End)
+  "I don't need you to babysit me." (Go to 6)
+5. "So be it, but I will be keeping a close watch on you." (naiaPartnered = false) (End)
+6. "Even so, it would be irresponsible to go it alone. I will stay back and let you go at your own pace, but I insist on coming along, just in case something goes badly." (naiaPartnered = false) (End)
+7. "You are unlikely to find anything an outsider would consider 'treasure' here. If you seek wealth, you will surely fit in better elsewhere. The marsh is not the place for you."
+  "I'm going in anyway." (Go to 5)
+  "Actually, the treasure I'm looking for is the Verdant Ember." (Go to 8)
+8. "Oh, I see. Forgive me, then, outsider; I misjudged you. If you seek the Ember, I can guide you there."
+  "Alright, then. Let's go." (naiaPartnered = true) (End)
+  "Thanks, but I don't need a guide." (Go to 6)
+9. "Odd that you should seek such a thing here. Let me come with you; the heart of the marsh is a dangerous place, especially for outsiders."
+  "Okay, let's go." (naiaPartnered = true) (End)
+  "I'd rather do this on my own." (Go to 6)
+  "I understand, but this journey is very special to me. I need to do this alone." (if karma < 1, go to 10; else go to 11)
+10. "Sorry, but I cannot make an exception. I will stay out of your way, but I am coming all the same." (naiaPartnered = false) (End)
+11. "Well..." <i>sigh</i> "If that is truly how it is, I will allow you to go alone this once. Take this. You will need it." <i>Naia gives you a small trinket.</i> "I only hope you understand the weight of what you are doing." (naiasCharm = true) (End) 
+
+Merchant Company Agent
+
+On the Road to Tenli Village
+
+Context: Wick has just begun his journey into the marsh. On the main path toward the village, he encounters a fellow northerner resting on a stone and enjoying some coal.
+1. "Good day to you, spark. It's a long road to Tenli Village. Feel free to pull up a rock and rest a while. I've even got some coal to spare if you're hungry."
+  "Some coal would be great, thank you." (Regain HP) (Go to 2)
+  "Thanks, but I need to keep going." (End)
+2. "There you go, spark. Enjoy."
+  "Who are you?" (Go to 3)
+  "What was that about a village?" (Go to 4)
+  "Thanks, it was delicious. Farewell." (End)
+3. "Name's Renzel. I work for the Ignis Company, under the House of Ardor. I'm headed to Tenli Village to negotiate a trade deal with the tribe's elder." (askedWho = true)
+  (if !askedWho)"Who are you?" (Go to 3)
+  (if !askedVillage) "Can you tell me about Tenli Village?" (Go to 4)
+  (if !askedTrade) "What do you trade with the natives?" (Go to 5)
+  "Does the Ignis Company do business with the other houses?" (Go to 6)
+  "It was nice to meet you, but I need to keep going. Farewell." (End)
+4. "Tenli Village is an interesting place. We outsiders are only allowed into the ground-level part of the village, where things are made of stone. Tenli masonry is less than impressive, but to be fair, it's merely a concession made on behalf of visitors; their real crafts are woodworking and weaving. They make some beautiful works out of wood and vines, and they don't even burn them thanks to the Verdant Ember's blessing. But alas, you and I can only look at Tenli's craft from afar." (askedVillage = true) (Return to 3)
+5. "The marsh is pretty light in mineral resources, so we trade good quality stone and metal, mostly in exchange for foodstuffs. Dry wood, vine, root, that kind of stuff. Some of the noble houses will pay a pretty penny for tribal art, too, but of course, it has to be well preserved as to avoid burning." (askedTrade = true) (Return to 3)
+6. "Sometimes, but we mostly trade with other provinces. Why do you ask?"
+  "I was just curious." (Text: "Fair enough." Return to 3)
+  "I was wondering because I might want to join up with your company sometime." (Go to 7)
+  "I'm a noble myself, and I'd like to negotiate a deal." (Go to 8)
+7. "Ah, I see. Good to meet a young spark with some volition. Our headquarters are back in Gray Coast, in the Northern Province, so you can inquire there when you have the time. We also have a pretty substantial office in Dewyn, capital of the Plains Province. Just tell ‘em old Renzel sent you; they'll get you sorted." <i>Gives Ignis Company card</i> "Heck, if you want to get an early start, I've got a package for the metal merchant in Tenli Village. I'll be stuck here for a while longer, but I'd be willing to pay you to take it to him."
+  "Thanks for the offer, but I've got a lot on my plate already." (Go to 24)
+  "That sounds like something I can do." (Go to 25)
+8. "That so? What's your name?"
+  "Wixellus Ire." (+small karma) (Go to 9)
+  "Ekellus Ire." (Go to 10)
+  "Kadis Vim." (Go to 11)
+  "Habaldt Ardor." (Go to 12)
+9. "Wixellus... the exiled Ire kid? Heh, well, you're either pretty dense or too honest for your own good, telling me that. Guess now I know why you didn't fit in. Still, I don't think you're in any position to be negotiating trade deals. But with that said, there may be a way I can help you out." <i>Gives Ignis Company card</i> "Take that to our office in Dewyn, and tell 'em Renzel sent you. Your exile status would complicate working in Gray Coast, but no one will know about that out in the plains. Go on and make something of yourself, spark — you might have a bright future ahead of you yet." (End)
+10. "Ah, well met, then, Mr. Ire. So, what's your proposition?"
+11. "Oh, Mr. Vim! I heard about your recent duel — whelp had it coming, I say. Can't get anywhere in the world if you don't learn some respect. So, how can I help you?"
+12. "Nah, I'd know if you were an Ardor boy. Try again."
+"Uh, never mind." (Go to 13)
+"Wixellus Ire." (Go to 14)
+"Ekellus Ire." (Go to 14)
+"Kadis Vim." (Go to 14)
+13. "Mhm." (Return to 3)
+14. "Doesn't really matter now, since I already caught you. What are you after, anyway, impersonating a noble like that?"
+  "I should really be going." (End)
+  "Nothing, really. I was just messing with you." (Go to 15)
+  "I was hoping you would deliver something to my family." (Go to 16)
+  "I wanted to prank a rival of mine."
+15. "Well, that's rather petty of you, but alright. (Return to 3)
+16. "If that's the case, why lie about your identity?"
+  "I'm not exactly in the best standing with them right now." (Go to 18)
+  "I'd rather not talk about it." (Go to 17)
+17. "Fair enough, I suppose. I know what it's like having unpleasantness between loved ones." (Return to 3)
+18. "Sorry to hear that, spark. Family trouble puts a damper on everything. What's your family's name? Maybe I can help."
+  "You don't want to trouble yourself with it, believe me." (Go to 19)
+  "We're a middle class family out in Eastcrag, name of Daze." (Go to 20)
+  "It's Ire, actually." (Go to 26)
+19. "Heh, perhaps you're right, but I'll still give you a piece of advice: Any old hurts you've got, try not to dwell on those. Even if you're planning on revenge, hanging onto the pain will only slow you down." (Return to 3)
+20. "Daze... can't say I've heard the name, but I come from the same kind of background. 'Course, if I were a noble, you'd already know it. So, what's the trouble?"
+  "My parents wanted me to stay home and inherit the family business, but I decided to leave the Northern Province to find my own lot in life instead. I don't think they've forgiven me." (Go to 21)
+  "Ever since my grandfather died, there's been constant arguing and lawsuits over inheritance. It was a rash decision, but I decided to pack up and leave to get away from it all." (Go to 22)
+  "I did something rather embarrassing, and my family disowned me for it. I'm trying to atone by embracing the Verdant Ember." (Go to 23)
+21. "I hear that story unfold all too often. Every flame wants their legacy to live on through their kids, of course, but we sometimes go too far, especially up north. I would suggest going back home to talk it out. If your parents' hearts are in the right place, you can at least discuss what you're going to do with your future. If not, there's nothing stopping you from leaving again. Here, take this." <i>Gives Ignis Company Card</i> "We've got offices in Gray Coast and Dewyn where you might find a job. You don't have to actually pursue it, of course, but it's a prospect for you if things don't pan out back home." (End)
+22. "It's crazy what money can do to relationships, and I should know. Here's my point of advice: If you know there's someone who needs your support in the midst of that mess, you need to go back right away. Otherwise, you probably did the right thing by walking away from that situation; those kinds of feuds can ruin your relationships, your finances, and your sanity. Hm... here, you should have this." <i>Gives Ignis Company Card</i> "If you need work and ever find yourself out near Dewyn or Gray Coast, we're hiring. It's good money, and you'll get to see the world. Maybe take your mind off things." (End)
+23. "Must've been something pretty serious, but I won't pry into specifics. Interesting choice to come after the Ember, though. I suppose you'll be heading deeper into the marsh." <i>Pauses for a moment</i> "I really shouldn't be giving this away, but it could save you in a pinch." <i>Gives flash powder x 4</i> "It'll give you a surge of heat. Should do some damage to the marsh creatures, too, or at least give them a scare. Good luck to ya — I'm betting you'll need it." (End)
+24. "No worries, spark. I hope the village treats you well, and good luck on the road." (End)
+25. "Excellent. Here's the package." <i>Gives Ignis package</i> "When you find Trefan — that's the metal merchant, should be in the central market — tell him I said that the pay is 50 argent, and I'll reimburse him when I get into town." (renzelJob = true) (End)
+26. "Well, I'll be. Don't think there's much I could do when it comes to mending relations in the ruling family. You aren't the exiled son, are you? You look to be about his age if the reports are right. Been a lot of talk about that recently."
+  "Yeah, that's me." (Go to 27)
+  "No. I'm his brother." (Go to 31)
+27. "That would explain what you're doing out here all alone. Just looking for a new place to settle down or what?"
+  "Yeah. I just sort of picked a direction and started going." (Go to 28)
+  "Actually, I'm here on a mission. I want to get stronger by embracing the Verdant Ember."
+28. "This may have been an unlucky pick, then. Marshfolk are different from us. They don't quite get the northern lifestyle; for them, things like success and personal achievement aren't as important as harmony among the tribe and with nature. You might not know it from the lower village, but I've met a few of the more conservative Tenli elders who don't get down to ground level often; the life they described is a much more spiritual, natural one. They hate even the small degree of industrialization in the lower village. Maybe you'd like that lifestyle better; I'm not one to judge. But you would have to embrace the Verdant Ember to have a chance of living with them."
+  "I already intend to embrace the Ember." (Go to 29)
+  "Hm, maybe I should go somewhere else, then." (Go to 30)
+29. "I see. You've got some hard travels ahead of you, then. I probably shouldn't be giving this away, but you need it more than I do." <i>Gives flash powder x 4</i> "Use it to gain a surge of heat. It should hurt any creatures that might attack you, or at least scare them away. Best of luck to you finding your way in life, spark. It's no small task." (End)
+30. "Perhaps so. I would suggest the plains; it's most similar to the north. Why don't you take this?" <i>Gives Ignis Company card</i> "If you ever visit Dewyn, the capital of the Plains Province, stop by our office there and tell them I sent you. The Ignis Company is always hiring. Best of luck to you finding your way in life, spark. It's no small task." (End)
+31. "Is that so? I had no idea two of the Ire boys were on bad terms with the family. Things must be going pretty bad for your house.
+
+Council
+
+Trial
+
+Context: Wick lied about having a caravan to receive special benefits in the trade plaza. Naia caught him and brought him before a panel of judges to be tried.
+
+
+
+Minor NPCs
+
+Hungry Villager
+
+Context: Located in the market square near several vendors from out of town.
+1."I wish the coal vendors would come more often. I have that craving that only coal can satisfy."
+  (if Wick has coal) "I have some coal you could eat. Here." (+ small karma) (Go to 2)
+  "What's wrong with Tenli food?" (Go to 3)
+  "That's rough." (Go to 4)
+2. "My thanks, friend! You are a lifesaver." (Munches coal) "Mmm, delicious." (End)
+3. "Nothing is <i>wrong</i> with it. It just lacks that mineral flavor I crave." (End)
+4. "Yes, it is. Rough and crunchy and absolutely scrumptious." (End)
+
+Cheery Villager
+
+Context: Located at the west side of the market.
+1. "Welcome to our village, visitor! I hope it is entirely to your liking."
+  "It's lovely, thank you." (Go to 2)
+  "I've certainly been to worse places." (Go to 3)
+  "It's all wet and dumpy." (Go to 4)
+2. "I am so glad to hear it." (End)
+3. "Then it is good that you are here now. I hope you will not have to revisit those places." (End)
+4. "Oh, I am so sorry you think so. I know the marsh can be inhospitable to outsiders. I hope it is not too unpleasant for you." (End)
