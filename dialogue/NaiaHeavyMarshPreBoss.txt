@@ -1,0 +1,67 @@
+if(motiveReveal)
+1. "We are nearly to the shrine of the Verdant Ember now. We just need to pass through this cavern, where the great water spirit slumbers."
+  "Great water spirit? Is that the same one you mentioned back the barrier?" (Go to 2)
+  "Will it be dangerous?" (Go to 3)
+2. "The very same. Do not worry, though; except during the Festival of Regrowth, the spirit only awakens if senses a wicked presence."
+  "Well, we should keep going." (if naiaFriendship > 2, go to 5; else end)
+  if(!askedFestival) "Festival of Regrowth? I don't think you've told me about that before." (Go to 4)
+3. "It should be completely safe. Except for the Festival of Regrowth, the spirit only awakens when it senses a wicked presence." (Return to 2)
+4. "It is an annual spring festival that lasts for a week, starting on the equinox. On the first morning, everyone finds a spot near the village to plant a tree seed, and each subsequent morning is spent nurturing it. In the evenings, we all gather in the treetops to sing and dance together and offer our prayers of thanksgiving to the spirits of the earth." (askedFestival = true)
+  "That sounds amazing. I'd love to see it sometime." (Go to 7)
+  "Huh. I see." (Go to 8)
+5. "Hold on. Stand close to me for a moment. We have been travelling for quite a while; we could both stand to be refreshed. And besides, you have quite a climb ahead of you." <i>Naia throws some sparkly yellow powder into the air around you. You feel your fatigue melt away.</i> (Health + 50)
+  "Wow, that feels great. What is it?" (Go to 6)
+  "Thank you, I feel way better now. Let's keep going." (End)
+6. "Squazit dust. Squazits are tiny bugs that pollinate the Jeru flowers throughout the marsh. In the process, they leave behind trace amounts of this rejuvinating dust. It generally takes months to gather a usable amount, so it is very precious, but this seemed an apt occasion to use it."
+  "You didn't have to use something so valuable on me." (Go to 9)
+  "Oh! In that case, thank you very much." (Go to 10)
+7. "It truly is. Come back and visit in the springtime if you want to observe — for that matter, with the blessing of the Verdant Ember, you may even be permitted to participate." (naiaFriendship + 1) (Return to 2)
+8. "I understand that it must sound strange to an outsider, but we of Tenli revere nature. This is our way of giving something back to her, and of honoring the spirits." (Return to 2)
+9. "Nonsense. This is what the dust is for. Lead on; we are nearly there now." (End)
+10. "You are very welcome. Go on, now; we are nearly there." (End)
+
+else if(thiefStory)
+1. "We have traversed the whole marsh, but there has not been a single other flame to be found. It seems we will not be bringing your 'thief' to justice after all."
+  "I guess not. It's a shame, too; losing those goods will really set me back." (If naiaFriendship > 2, go to 2; else go to 3)
+  "Nope. Sorry I tricked you, but I needed to cross the marsh." (Go to 11)
+2. "There is no need to perpetuate the ruse. I may have been too fast to believe your fiction, but it is obvious by now that that is all it is. Nonetheless, I cannot bring myself to be upset about it. It was good to get away from the bustle of the lower village for a while, and you have been a pleasant travel partner. Given how far we have come, I suppose you were looking for the Verdant Ember, were you not?"
+  "Yes, that's what I'm here for." (Go to 4)
+  "Honestly, I don't really know what I'm doing here." (Go to 5)
+3. "Do not bother trying to fool me any longer. It has been obvious for some time that there was no thief. But despite your dishonesty, it was good to get away from the bustle of the lower village for a while. To have come this far, you must be after the Ember, am I correct?"
+  "That's right." (Go to 6)
+  "No, that's not it." (Go to 7)
+4. "I wish you had said as much at the outset, but it is of little importance now. The Ember is at the top of a shrine just past this cave. The great water spirit resides here, but it lies dormant most of the time. Go on now; I will follow." (End)
+5. "Then perhaps the Ember can offer you a sense of purpose. If you climb the shrine and embrace it, you will gain a blessing that we of Tenli are born with. You will be gain harmony with nature, and the marsh will become safe for you. It is a great honor for an outsider to attain. This way, the journey will not be a waste of time. Lead on, and I will follow." (End)
+6. "Well, that is a worthy enough reason to venture to the heart of the marsh. I can forgive your duplicity up to this point, but please be more forthright in future. The Ember is through this cave. Lead on." (End)
+7. "Then what could possibly motivate you to come all this way? You outsiders continue to perplex me. Since there is nothing else to attend, we should return to the village now."
+  "You go ahead. I'll head back later." (Go to 9)
+  "Er... actually, I do want to embrace the Ember." (Go to 8)
+8. "...You are beginning to annoy me, but fine. Go on." (End)
+9. "I cannot allow that. It will be unsafe for you to make the return trip without either my company or the blessing of the Ember."
+  "Okay, fine. I'll go embrace the Ember." (Go to 10)
+10. "Then lead on." (End)
+11. "So I surmised. Now is the time to come clean — why have you come here?"
+  "My reasons are my own. I appreciate your help getting here, but that fact stands." (Go to 12)
+  "I'm here to embrace the Verdant Ember." (Go to 14)
+12. "I cannot force you to talk, but if you want to get out of the marsh safely, you either need to come back with me or gain the blessing of the Verdant Ember, which is just ahead. Which is it going to be?"
+  "I'll embrace the Ember, then." (Go to 13)
+13. "Very well. Proceed." (End)
+14. "I see. I wish you had been forthright about that from the start, but at least this makes sense now. The Ember is through the cave just ahead. Lead on." (End)
+
+else
+1. "This is it, the heart of the marsh. We have covered all we can — did you ever find what you were looking for?"
+  "No, but I think I'm about to." (Go to 2)
+  "No, I didn't." (Go to 3)
+  "I guess it's time for me to come clean. I'm here in search of the Verdant Ember." (Go to 4)
+2. "Hm? What do you mean by that?"
+  "I think what I'm looking for is through this cave." (Go to 5)
+  "What I'm looking for is the Ember." (Go to 4)
+3. "Well, that is a shame. We should head back to the village, then. With luck, you may spot it on the way back."
+  "Hold on. Let's push on a little farther." (Go to 7)
+  "I'll just come clean. I'm here to embrace the Ember." (Go to 4)
+4. "Oh! That is different, then. You could have said so from the outset; I would have eagerly helped you all the same. More so, even. We of Tenli do not seek to be an obstacle to pilgrims seeking the Ember's embrace. Lead on, then, and I will follow." (End)
+5. "All that is past here is the shrine of the Verdant Ember, just through the cavern where the great water spirit slumbers. Are saying that you are a pilgrim, in search of the Ember?"
+  "Well, yes. That's what I'm saying." (Go to 6)
+6. "You could have said so sooner, but it is no matter. We are indeed close, so let us press on." (End)
+7. "Hm? Why? Only the shrine of the Verdant Ember lies ahead, and I am certain whatever you are looking for could not have neded up there."
+  "Well, actually, what I'm looking for is the Ember." (Go to 6)

@@ -1,0 +1,11 @@
+Mini boss
+Open the gate!
+Item support dialogue parser
+PLAYER CHANGES COLOR
+X Interact/Proximity Load area triggers
+X NPC spawner
+X Death Screen
+Map end scroll
+Area transition
+Various NPC effects
+X Health Graphics - Fire

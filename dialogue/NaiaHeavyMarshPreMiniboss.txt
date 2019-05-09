@@ -1,0 +1,37 @@
+if(!naiaSuspicious)
+1. "This is highly unusual... those water wraiths up ahead have created some kind of magic barrier."
+  "How can we get rid of it?" (Go to 2)
+  "Wait, water wraiths can use magic?" (Go to 12)
+2. "In my tribe's legends, it is said that the first flames of Tenli contended with a water spirit so powerful that it could maintain a barrier of water around the entire heart of the marsh. Water wraiths far larger than any in recent history rampaged through the marsh, forcing us to flee our homes and threatening to destroy the tribe. Our warriors braved the watery dome, but they were repelled time and time again by the great spirit and its many lesser wraiths. Despite the danger, Elder Arelo, then a young flame, approached the spirit by himself..."
+  (Let her continue) (Go to 3)
+  "Cut to the chase. How do we deal with this thing?" (Go to 10)
+3. "Rather than a spear, Arelo held only a smoke flute and began to play. Everyone was certain the water spirit would extinguish him, but instead the melody assuaged its wrath. Arelo explained that our people had no intent of violence and asked why the spirit was so upset. The spirit said that wicked flames had come from the east, burning the marsh and slaying its children indiscriminately. The great spirit had put up the barrier to preserve a little piece of the marsh, even if it had to be secluded from the rest of the world. Arelo sympathized with the spirit and said that Tenli would help drive the wicked flames away..."
+  (Let her continue) (Go to 4)
+  "Hold up, what was that about the smoke flute?" (Go to 7) 
+4. "So, Arelo made a pact with the great water spirit. He gave up a part of his soul, and the spirit gave up a part of its. From that union, the Verdant Ember was created, and Tribe Tenli have been the wardens of the marsh ever since... My apologies; I did not mean to go on for so long. Thank you for listening to my story anyway. What I mean to convey is that I have a smoke flute with me, so I may be able to sooth the large water wraith ahead."
+  "Sounds like a good plan. I'll keep the wraiths busy while you do that." (Go to 5)
+  "That sounds iffy to me. I'd rather fight it than risk letting it get the drop on us while our guards our down." (Go to 6)
+5. "Excellent. Lead the way." (naiaPlan = true) (naiaFriendship + 1) (End)
+6. "Well, if you insist..." (End)
+7. "Oh, right. What I was getting at is that I might be able to sooth the large water wraith ahead, thus dispelling the barrier."
+  "Alright. We can try that." (Go to 8)
+  "Eh, I think just fighting it is the safer option here." (Go to 9)
+8. "Very good. Lead the way." (naiaPlan = true) (End)
+9. "I was hoping you would not say that, but if that is what you think, so be it. Lead on." (End)
+10. "<i>The chase</i> is this: It is possible that I may be able to sooth the large water wraith by playing the smoke flute. That might dispel the barrier."
+  "That sounds silly. I'm just going to fight the thing, plain and simple." (naiaFriendship - 1) (End)
+  "Oh. I guess we could try that." (Go to 11)
+11. "Very well. Lead on." (naiaPlan = true) (End)
+12. "Most cannot. In fact, the only account of water wraiths exercising such power dates back to the beginnings of Tribe Tenli."
+  <i>Continue</i> (Go to 2)
+
+else
+1. "Stop. This is as far into the marsh as you can go. The wraiths ahead have created a magic barrier."
+  "Then I'll just kill the wraiths and get rid of it." (Go to 2)
+  "How can the barrier be destroyed?" (Go to 4)
+2. "That would be foolish to attempt. There have been no water wraiths with this power for over one thousand years; even if you defeat this group, something far more dangerous lies behind it."
+  "I don't care about your tribal superstition. Go away." (Go to 3)
+  "Then what can I do?" (Go to 5)
+3. "<i>Outsider</i>... I have been more than accommodating of your flippant attitude up to this point. I have tried to look out for you safety. <i><s style="color:red;">And yet you see fit to insult me,</s><i> even as I try to spare you unnecessary suffering. <s style="color:red;">Fine, then. Proceed at you own peril. <i>Goodbye.</i></s>" (naiaEnd = veryBad) (End)
+4. "It cannot be. The wraiths ahead are too dangerous for you to consider fighting. You need to turn back now; you can only cause harm by pressing on now." (naiaEnd = bad) (End)
+5. "There is nothing to do. Whatever you are searching for, you need to give it up. You will not come out better by involving yourself with this situation." (naiaEnd = bad) (End)

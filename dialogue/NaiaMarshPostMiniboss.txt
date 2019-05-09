@@ -1,0 +1,24 @@
+if(naiaPlan && wraithSoothed)
+1. "It worked... that put the wraith right to sleep. I am glad that we were able to spare the creature."
+  "If you're glad, I'm glad." (Go to 2)
+  "It's actually kind of cute when it's not trying to kill me." (Go to 3)
+  "It's clear that your tribe has a deep respect for nature. Is that why you wanted to spare the wraith — to maintain harmony with nature?" (Go to 4)
+2. "Thank you. That is very kind of you to say." (End)
+3. "Hah, I suppose it is. Even the fiercest creatures may have unexpected soft sides." (End)
+4. "That is exactly right. Our relationship with nature is how we of Tenli understand the world and ourselves. Harmony is as fragile as it is precious — I only wish more outsiders understood that." (End)
+
+else if(naiaPlan)
+1. "Why did you do that?! We had a plan!"
+  "I changed the plan." (Go to 2)
+  "I'm so sorry, Naia. It was right on top of me; I had to do something." (Go to 3)
+  "Geez, sorry. I didn't think it was that important to you." (Go to 4)
+2. "<s style="color:red">Indeed you did.</s> And now we have wrought unnecessary violence. The elder will be displeased to hear of this..." (naiaFriendship - 2) (End)
+3. <i>Sigh</i> "I... I forgive you. I only wish this could have gone differently." (End)
+4. "Well, you were mistaken. Tribe Tenli's mission is to maintain harmony with the marsh, not to destroy it." (naiaFriendship - 1) (End)
+
+else
+1. "That puts an end to the greater wraith, then. It is a shame... I will not enjoy reporting this to the elder."
+  "I'm sorry, Naia. I wish you had told me how important this was." (Go to 2)
+  "It was only a beast. There's no reason to feel bad." (Go to 3)
+2. "Yes, I should have done that. I should have been more insistent. But it is too late now." (End)
+3. "No, it was not 'just a beast.' The water wraiths are a part of the marsh, a part of nature; they should be respected, not carelessly killed." (naiaFriendship - 1) (End)

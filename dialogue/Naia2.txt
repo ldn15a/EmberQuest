@@ -21,10 +21,10 @@ else if(enteredVillage && expectedCaravan)
 3. "I was beginning to suspect as much. I am taking you back to the council for judgment — since you came clean, I will see that your sentence is light." (End)
 4. "Really, now? You need to attend something in the heart of the marsh?"
   "Well... no." (Go to 5)
-  "Someone stole something from me, and I saw him fleeing this way." (Go to 6)
+  "Someone stole something valuable from me, and I saw him fleeing this way." (Go to 6)
 5. "That is what I thought. Come along now; you are going before the council to be judged." (End)
-6. "Then why did you not tell a guard sooner? No matter — I will come with you. If what you say is true, we will bring the thief to justice." (naiaPartnered = true) (End)
-7. "Ah, I see. A noble endeavor. It is an arduous journey, one many fail to complete. I will go with you as a guide; the marsh is dangerous to outsiders, and I will not let you march headlong into it without help."
+6. "Then why did you not tell a guard sooner? No matter — I will come with you. If what you say is true, we will bring the thief to justice." (thiefStory = true) (naiaPartnered = true) (End)
+7. "Ah, I see. A noble endeavor. It is an arduous journey, one many fail to complete. I will go with you as a guide; the marsh is dangerous to outsiders, and I will not let you march headlong into it without help." (motiveReveal = true)
   "Thank you. Let's get going, then." (naiaPartnered = true) (End)
   "Thanks, but this is something I need to do alone." (Go to 10)
 8. "Be that as it may, if you are heading deeper into the marsh, let me come with you. It is unsafe for outsiders."
@@ -38,7 +38,7 @@ else if(enteredVillage)
   "I'm searching for the Verdant Ember." (Go to 2)
   "Just exploring the marsh." (Go to 3)
   "That's none of your concern." (Go to 4)
-2. "The Ember? You should have told me sooner. The marsh is dangerous for outsiders. Let me come with you; I can help you weather the dangers ahead."
+2. "The Ember? You should have told me sooner. The marsh is dangerous for outsiders. Let me come with you; I can help you weather the dangers ahead." (motiveReveal = true)
   "Alright, let's go." (naiaPartnered = true) (End)
   "I'd rather go it alone." (Go to 5)
 3. "I see. We can explore together, then; the marsh is beautiful but dangerous for those not blessed by the Verdant Ember. I will be your guide."
@@ -57,7 +57,7 @@ else
   "There's something I'm looking for in the marsh." (Go to 3)
   "I'm just exploring." (Go to 4)
   "As if I'd tell you." (Go to 5)
-2. "I see. That is an admirable but perilous venture. As an outsider, you ought to have a guide as you go deeper into the marsh. I will come with you to show you the way."
+2. "I see. That is an admirable but perilous venture. As an outsider, you ought to have a guide as you go deeper into the marsh. I will come with you to show you the way." (motiveReveal = true)
   "Thank you. Let's go." (naiaPartnered = true) (End)
   "I would rather do this alone." (Go to 6)
 3. "And what might that be?"
@@ -67,12 +67,12 @@ else
 4. "The heart of the marsh is quite a dangerous place to explore, outsider. I will come with you, just to make sure you are safe in the case of an emergency."
   "Okay, sounds good." (naiaPartnered = true) (End)
   "I don't need you to babysit me." (Go to 6)
-5. "So be it, but I will be keeping a close watch on you." (naiaPartnered = false) (End)
+5. "So be it, but I will be keeping a close watch on you." (naiaPartnered = false) (naiaSuspicious = true) (End)
 6. "Even so, it would be irresponsible to go it alone. I will stay back and let you go at your own pace, but I insist on coming along, just in case something goes badly." (naiaPartnered = false) (End)
 7. "You are unlikely to find anything an outsider would consider 'treasure' here. If you seek wealth, you will surely fit in better elsewhere. The marsh is not the place for you."
   "I'm going in anyway." (Go to 5)
   "Actually, the treasure I'm looking for is the Verdant Ember." (Go to 8)
-8. "Oh, I see. Forgive me, then, outsider; I misjudged you. If you seek the Ember, I can guide you there."
+8. "Oh, I see. Forgive me, then, outsider; I misjudged you. If you seek the Ember, I can guide you there." (motiveReveal = true)
   "Alright, then. Let's go." (naiaPartnered = true) (End)
   "Thanks, but I don't need a guide." (Go to 6)
 9. "Odd that you should seek such a thing here. Let me come with you; the heart of the marsh is a dangerous place, especially for outsiders."

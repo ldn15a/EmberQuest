@@ -1,5 +1,5 @@
 1."I wish the coal vendors would come more often. I have that craving that only coal can satisfy."
-  (if Wick has coal) "I have some coal you could eat. Here." (+ small karma) (Go to 2)
+  (if coal) "I have some coal you could eat. Here." (karma + 1) (Go to 2)
   "What's wrong with Tenli food?" (Go to 3)
   "That's rough." (Go to 4)
 2. "My thanks, friend! You are a lifesaver." (Munches coal) "Mmm, delicious." (End)

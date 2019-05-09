@@ -1,0 +1,12 @@
+if(naiaFriendship == 5)
+1. "I need to return to Tenli Village now. It was a sincere pleasure to travel with you, outsider..." <i>Naia sighs</i> "I... I never deigned to ask your name. Here in the marsh, we take it as a given that outsiders will be here one day and gone the next. Itinerants or exploiters, never respecting us or our home. It is easy to be jaded. But you are not an ordinary outsider, and I would have you as a friend. So please... tell me your name."
+  "My name is Wick." (Go to 2)
+  "I'd like to tell you, truly. But my name carries the scorn of some powerful people, so I'm afraid I would make an inauspicious friend." (Go to 3)
+2. "Wick... a strange name, but one I will not forget. I must return now, but I pray a lasting blessing on you. Farewell, Wick." (naiaEnd = VeryGood) (End)
+3. "I see..." <i>Naia is silent for a long moment</i> "You have always respected my knowledge of my own domain, so I must respect yours. If you say it is so, I trust your reasons. But... you are a seeker after the Ember, after strength and wisdom. So that is what I shall call you. Farewell, Seeker." (naiaEnd = VeryGood) (End)
+
+else
+1. "It was a pleasure travelling with you, outsider. Perhaps we will meet again someday."
+  "Perhaps we will. Farewell, Naia." (naiaEnd = Good) (End)
+  "We will. I'll make sure of it." (Go to 2)
+2. "Then I look forward to that day. Until then, I pray a blessing on your travels." (naiaEnd = Good) (End)
