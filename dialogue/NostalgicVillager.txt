@@ -1,0 +1,5 @@
+1. "Things used to be so much quieter down here. Now it seems as though there is no end to the comings and goings. I do miss being able to sit and watch the stream in peace."
+  "That does sound like a better day." (Go to 2)
+  "Didn't you ever get bored?" (Go to 3)
+2. "Indeed. I am not blind to the material benefits of trade, but I hope the village does not become any more... I think you call it 'urbanized.' I want my children to respect nature and to respect Tenli traditions. I suppose I will have to move back to the treetops; this place looks less familiar every day."
+3. "No. There is nothing boring about the serenity of nature. And the more we concede to outsiders, the less natural this village becomes. I remember when there was not a single ounce of worked stone in this place. I hold no grudges against outsiders, but I cannot help thinking that in forming bonds with the north, we have lost a little of our bond with the marsh."

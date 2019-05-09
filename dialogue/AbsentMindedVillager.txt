@@ -1,0 +1,14 @@
+if(absentMindedEncounter == 0)
+1. "Hm. I wonder why gems are so sparkly. Do little spirits live inside them? Hm..." (absentMindedEncounter + 1) (End)
+
+else if(absentMindedEncounter == 1)
+1. "They say gems are a type of rock. But rocks are not alive, so if gems have spirits, that is impossible. Unless a rock is a dead gem? Hm..." (absentMindedEncounter + 1) (End)
+
+else if(absentMindedEncounter == 2)
+1. "But then, spirits do not die. Perhaps they vacate the gems, and they become rocks? Hm..." (absentMindedEncounter + 1) (End)
+
+else if(absentMindedEncounter == 3)
+1. "And if the spirit leaves a gem, does it go back to the realm of spirits? Or is it forced to wander here, invisible, forever? Hm..." (absentMindedEncounter + 1) (End)
+
+else
+1. "Hm..." (End)

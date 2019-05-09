@@ -1,0 +1,13 @@
+if(!naiaSuspicious)
+1. "Well, we are entering the thick of the marsh now. The ground is very wet beyond this point, so you will want to keep to the elevated ledges. You will need to move quickly between dry spots to avoid getting hurt. Water wraith spitters are also like the heights here, so be wary of water droplets launched from above. That said, please try to spare as many of the creatures here as possible."
+  "Got it." (if naiaPartnered, go to 2; else go to 3)
+  if(naiaPartnered) "Can you deal with those spitters for me?" (Go to 4)
+  if(!wraithQuestion) "Why do the water wraiths matter to you?" (Go to 7)
+2. "Good. You may proceed now; I will be right behind you." (End)
+3. "I will be waiting past the second pond up ahead. Proceed with care." (End)
+4. "That is not a bad idea. I will not harm them, but I can distract them to keep their attention off of you."
+  "I would appreciate that." (Go to 5)
+  "Don't bother; I'll just weather the danger." (Go to 6)
+5. "Very well. I shall do my best." (naiaFriendship + 1) (naiaDistract = true) (End)
+6. "As you wish." (End)
+7. "Though dangerous to those not attuned to the soul of the marsh, the water wraiths are innocent creatures. They are more afraid of you than you are of them. I understand that killing some of them is inevitable — such is the way of life. But I cannot abide wanton destruction." (wraithQuestion = true) (Return to 1)

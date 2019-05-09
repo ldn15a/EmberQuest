@@ -1,0 +1,4 @@
+1. "What do <i>you</i> want?"
+  "Whoa, why so hostile?" (Go to 2)
+  "On second thought, I think I'll leave you alone." (End)
+2. "Hah! 'Hostile,' as if I were the aggressor. I am not the one coming into <i>your</i> home, making <i>you</i> build needless extravagances, forcing <i>your</i> people to debase themselves to accommodate me! We never needed these stone buildings, that garish council lodge, and <i>especially</i> not a jail. You northerners have no respect for anyone. Get out of here, and take your greed and crime elsewhere!"

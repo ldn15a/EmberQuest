@@ -8,7 +8,7 @@ Context: Wick has traversed the beginning of the marsh and is approaching Tenli 
   "I'm here to trade." (Go to 3)
   "That's no business of yours." (Go to 4)
   "Tenli Village?" (Go to 5)
-2. "Ah, a pilgrim. You are on the right track. The Verdant Ember is enshrined in the heart of the marsh, a dangerous place for outsiders like you, I am afraid." (toldTruth = true)
+2. "Ah, a pilgrim. You are on the right track. The Verdant Ember is enshrined in the heart of the marsh, a dangerous place for outsiders like you, I am afraid." (toldTruth = true) (motiveReveal = true)
   "What makes it dangerous?" (Go to 6)
   "What can you tell me about the village?" (Go to 7)
   "May I enter the village?" (Go to 9)
@@ -64,10 +64,10 @@ else if(enteredVillage && expectedCaravan)
 3. "I was beginning to suspect as much. I am taking you back to the council for judgment — since you came clean, I will see that your sentence is light." (End)
 4. "Really, now? You need to attend something in the heart of the marsh?"
   "Well... no." (Go to 5)
-  "Someone stole something from me, and I saw him fleeing this way." (Go to 6)
+  "Someone stole something valuable from me, and I saw him fleeing this way." (Go to 6)
 5. "That is what I thought. Come along now; you are going before the council to be judged." (End)
-6. "Then why did you not tell a guard sooner? No matter — I will come with you. If what you say is true, we will bring the thief to justice." (naiaPartnered = true) (End)
-7. "Ah, I see. A noble endeavor. It is an arduous journey, one many fail to complete. I will go with you as a guide; the marsh is dangerous to outsiders, and I will not let you march headlong into it without help."
+6. "Then why did you not tell a guard sooner? No matter — I will come with you. If what you say is true, we will bring the thief to justice." (thiefStory = true) (naiaPartnered = true) (End)
+7. "Ah, I see. A noble endeavor. It is an arduous journey, one many fail to complete. I will go with you as a guide; the marsh is dangerous to outsiders, and I will not let you march headlong into it without help." (motiveReveal = true)
   "Thank you. Let's get going, then." (naiaPartnered = true) (End)
   "Thanks, but this is something I need to do alone." (Go to 10)
 8. "Be that as it may, if you are heading deeper into the marsh, let me come with you. It is unsafe for outsiders."
@@ -81,7 +81,7 @@ else if(enteredVillage)
   "I'm searching for the Verdant Ember." (Go to 2)
   "Just exploring the marsh." (Go to 3)
   "That's none of your concern." (Go to 4)
-2. "The Ember? You should have told me sooner. The marsh is dangerous for outsiders. Let me come with you; I can help you weather the dangers ahead."
+2. "The Ember? You should have told me sooner. The marsh is dangerous for outsiders. Let me come with you; I can help you weather the dangers ahead." (motiveReveal = true)
   "Alright, let's go." (naiaPartnered = true) (End)
   "I'd rather go it alone." (Go to 5)
 3. "I see. We can explore together, then; the marsh is beautiful but dangerous for those not blessed by the Verdant Ember. I will be your guide."
@@ -100,7 +100,7 @@ else
   "There's something I'm looking for in the marsh." (Go to 3)
   "I'm just exploring." (Go to 4)
   "As if I'd tell you." (Go to 5)
-2. "I see. That is an admirable but perilous venture. As an outsider, you ought to have a guide as you go deeper into the marsh. I will come with you to show you the way."
+2. "I see. That is an admirable but perilous venture. As an outsider, you ought to have a guide as you go deeper into the marsh. I will come with you to show you the way." (motiveReveal = true)
   "Thank you. Let's go." (naiaPartnered = true) (End)
   "I would rather do this alone." (Go to 6)
 3. "And what might that be?"
@@ -110,12 +110,12 @@ else
 4. "The heart of the marsh is quite a dangerous place to explore, outsider. I will come with you, just to make sure you are safe in the case of an emergency."
   "Okay, sounds good." (naiaPartnered = true) (End)
   "I don't need you to babysit me." (Go to 6)
-5. "So be it, but I will be keeping a close watch on you." (naiaPartnered = false) (End)
+5. "So be it, but I will be keeping a close watch on you." (naiaPartnered = false) (naiaSuspicious = true) (End)
 6. "Even so, it would be irresponsible to go it alone. I will stay back and let you go at your own pace, but I insist on coming along, just in case something goes badly." (naiaPartnered = false) (End)
 7. "You are unlikely to find anything an outsider would consider 'treasure' here. If you seek wealth, you will surely fit in better elsewhere. The marsh is not the place for you."
   "I'm going in anyway." (Go to 5)
   "Actually, the treasure I'm looking for is the Verdant Ember." (Go to 8)
-8. "Oh, I see. Forgive me, then, outsider; I misjudged you. If you seek the Ember, I can guide you there."
+8. "Oh, I see. Forgive me, then, outsider; I misjudged you. If you seek the Ember, I can guide you there." (motiveReveal = true)
   "Alright, then. Let's go." (naiaPartnered = true) (End)
   "Thanks, but I don't need a guide." (Go to 6)
 9. "Odd that you should seek such a thing here. Let me come with you; the heart of the marsh is a dangerous place, especially for outsiders."
@@ -124,6 +124,285 @@ else
   "I understand, but this journey is very special to me. I need to do this alone." (if karma < 1, go to 10; else go to 11)
 10. "Sorry, but I cannot make an exception. I will stay out of your way, but I am coming all the same." (naiaPartnered = false) (End)
 11. "Well..." <i>sigh</i> "If that is truly how it is, I will allow you to go alone this once. Take this. You will need it." <i>Naia gives you a small trinket.</i> "I only hope you understand the weight of what you are doing." (naiasCharm = true) (End) 
+
+Heavy Marsh Start
+
+if(!naiaSuspicious)
+1. "Well, we are entering the thick of the marsh now. The ground is very wet beyond this point, so you will want to keep to the elevated ledges. You will need to move quickly between dry spots to avoid getting hurt. Water wraith spitters are also like the heights here, so be wary of water droplets launched from above. That said, please try to spare as many of the creatures here as possible."
+  "Got it." (if naiaPartnered, go to 2; else go to 3)
+  if(naiaPartnered) "Can you deal with those spitters for me?" (Go to 4)
+  if(!wraithQuestion) "Why do the water wraiths matter to you?" (Go to 7)
+2. "Good. You may proceed now; I will be right behind you." (End)
+3. "I will be waiting past the second pond up ahead. Proceed with care." (End)
+4. "That is not a bad idea. I will not harm them, but I can distract them to keep their attention off of you."
+  "I would appreciate that." (Go to 5)
+  "Don't bother; I'll just weather the danger." (Go to 6)
+5. "Very well. I shall do my best." (naiaFriendship + 1) (naiaDistract = true) (End)
+6. "As you wish." (End)
+7. "Though dangerous to those not attuned to the soul of the marsh, the water wraiths are innocent creatures. They are more afraid of you than you are of them. I understand that killing some of them is inevitable — such is the way of life. But I cannot abide wanton destruction." (wraithQuestion = true) (Return to 1)
+
+Heavy Marsh Pre Miniboss
+
+if(!naiaSuspicious)
+1. "This is highly unusual... those water wraiths up ahead have created some kind of magic barrier."
+  "How can we get rid of it?" (Go to 2)
+  "Wait, water wraiths can use magic?" (Go to 12)
+2. "In my tribe's legends, it is said that the first flames of Tenli contended with a water spirit so powerful that it could maintain a barrier of water around the entire heart of the marsh. Water wraiths far larger than any in recent history rampaged through the marsh, forcing us to flee our homes and threatening to destroy the tribe. Our warriors braved the watery dome, but they were repelled time and time again by the great spirit and its many lesser wraiths. Despite the danger, Elder Arelo, then a young flame, approached the spirit by himself..."
+  (Let her continue) (Go to 3)
+  "Cut to the chase. How do we deal with this thing?" (Go to 10)
+3. "Rather than a spear, Arelo held only a smoke flute and began to play. Everyone was certain the water spirit would extinguish him, but instead the melody assuaged its wrath. Arelo explained that our people had no intent of violence and asked why the spirit was so upset. The spirit said that wicked flames had come from the east, burning the marsh and slaying its children indiscriminately. The great spirit had put up the barrier to preserve a little piece of the marsh, even if it had to be secluded from the rest of the world. Arelo sympathized with the spirit and said that Tenli would help drive the wicked flames away..."
+  (Let her continue) (Go to 4)
+  "Hold up, what was that about the smoke flute?" (Go to 7) 
+4. "So, Arelo made a pact with the great water spirit. He gave up a part of his soul, and the spirit gave up a part of its. From that union, the Verdant Ember was created, and Tribe Tenli have been the wardens of the marsh ever since... My apologies; I did not mean to go on for so long. Thank you for listening to my story anyway. What I mean to convey is that I have a smoke flute with me, so I may be able to sooth the large water wraith ahead."
+  "Sounds like a good plan. I'll keep the wraiths busy while you do that." (Go to 5)
+  "That sounds iffy to me. I'd rather fight it than risk letting it get the drop on us while our guards our down." (Go to 6)
+5. "Excellent. Lead the way." (naiaPlan = true) (naiaFriendship + 1) (End)
+6. "Well, if you insist..." (End)
+7. "Oh, right. What I was getting at is that I might be able to sooth the large water wraith ahead, thus dispelling the barrier."
+  "Alright. We can try that." (Go to 8)
+  "Eh, I think just fighting it is the safer option here." (Go to 9)
+8. "Very good. Lead the way." (naiaPlan = true) (End)
+9. "I was hoping you would not say that, but if that is what you think, so be it. Lead on." (End)
+10. "<i>The chase</i> is this: It is possible that I may be able to sooth the large water wraith by playing the smoke flute. That might dispel the barrier."
+  "That sounds silly. I'm just going to fight the thing, plain and simple." (naiaFriendship - 1) (End)
+  "Oh. I guess we could try that." (Go to 11)
+11. "Very well. Lead on." (naiaPlan = true) (End)
+12. "Most cannot. In fact, the only account of water wraiths exercising such power dates back to the beginnings of Tribe Tenli."
+  <i>Continue</i> (Go to 2)
+
+else
+1. "Stop. This is as far into the marsh as you can go. The wraiths ahead have created a magic barrier."
+  "Then I'll just kill the wraiths and get rid of it." (Go to 2)
+  "How can the barrier be destroyed?" (Go to 4)
+2. "That would be foolish to attempt. There have been no water wraiths with this power for over one thousand years; even if you defeat this group, something far more dangerous lies behind it."
+  "I don't care about your tribal superstition. Go away." (Go to 3)
+  "Then what can I do?" (Go to 5)
+3. "<i>Outsider</i>... I have been more than accommodating of your flippant attitude up to this point. I have tried to look out for you safety. <i><s style="color:red;">And yet you see fit to insult me,</s><i> even as I try to spare you unnecessary suffering. <s style="color:red;">Fine, then. Proceed at you own peril. <i>Goodbye.</i></s>" (naiaEnd = "veryBad") (End)
+4. "It cannot be. The wraiths ahead are too dangerous for you to consider fighting. You need to turn back now; you can only cause harm by pressing on now." (naiaEnd = "bad") (End)
+5. "There is nothing to do. Whatever you are searching for, you need to give it up. You will not come out better by involving yourself with this situation." (naiaEnd = "bad") (End)
+
+Heavy Marsh Post Miniboss
+
+if(naiaPlan && wraithSoothed)
+1. "It worked... that put the wraith right to sleep. I am glad that we were able to spare the creature."
+  "If you're glad, I'm glad." (Go to 2)
+  "It's actually kind of cute when it's not trying to kill me." (Go to 3)
+  "It's clear that your tribe has a deep respect for nature. Is that why you wanted to spare the wraith — to maintain harmony with nature?" (Go to 4)
+2. "Thank you. That is very kind of you to say." (End)
+3. "Hah, I suppose it is. Even the fiercest creatures may have unexpected soft sides." (End)
+4. "That is exactly right. Our relationship with nature is how we of Tenli understand the world and ourselves. Harmony is as fragile as it is precious — I only wish more outsiders understood that." (End)
+
+else if(naiaPlan)
+1. "Why did you do that?! We had a plan!"
+  "I changed the plan." (Go to 2)
+  "I'm so sorry, Naia. It was right on top of me; I had to do something." (Go to 3)
+  "Geez, sorry. I didn't think it was that important to you." (Go to 4)
+2. "<s style="color:red">Indeed you did.</s> And now we have wrought unnecessary violence. The elder will be displeased to hear of this..." (naiaFriendship - 2) (End)
+3. <i>Sigh</i> "I... I forgive you. I only wish this could have gone differently." (End)
+4. "Well, you were mistaken. Tribe Tenli's mission is to maintain harmony with the marsh, not to destroy it." (naiaFriendship - 1) (End)
+
+else
+1. "That puts an end to the greater wraith, then. It is a shame... I will not enjoy reporting this to the elder."
+  "I'm sorry, Naia. I wish you had told me how important this was." (Go to 2)
+  "It was only a beast. There's no reason to feel bad." (Go to 3)
+2. "Yes, I should have done that. I should have been more insistent. But it is too late now." (End)
+3. "No, it was not 'just a beast.' The water wraiths are a part of the marsh, a part of nature; they should be respected, not carelessly killed." (naiaFriendship - 1) (End)
+
+Heavy Marsh Pre Boss
+
+if(motiveReveal)
+1. "We are nearly to the shrine of the Verdant Ember now. We just need to pass through this cavern, where the great water spirit slumbers."
+  "Great water spirit? Is that the same one you mentioned back the barrier?" (Go to 2)
+  "Will it be dangerous?" (Go to 3)
+2. "The very same. Do not worry, though; except during the Festival of Regrowth, the spirit only awakens if senses a wicked presence."
+  "Well, we should keep going." (if naiaFriendship > 2, go to 5; else end)
+  if(!askedFestival) "Festival of Regrowth? I don't think you've told me about that before." (Go to 4)
+3. "It should be completely safe. Except for the Festival of Regrowth, the spirit only awakens when it senses a wicked presence." (Return to 2)
+4. "It is an annual spring festival that lasts for a week, starting on the equinox. On the first morning, everyone finds a spot near the village to plant a tree seed, and each subsequent morning is spent nurturing it. In the evenings, we all gather in the treetops to sing and dance together and offer our prayers of thanksgiving to the spirits of the earth." (askedFestival = true)
+  "That sounds amazing. I'd love to see it sometime." (Go to 7)
+  "Huh. I see." (Go to 8)
+5. "Hold on. Stand close to me for a moment. We have been travelling for quite a while; we could both stand to be refreshed. And besides, you have quite a climb ahead of you." <i>Naia throws some sparkly yellow powder into the air around you. You feel your fatigue melt away.</i> (hitPoints + 50)
+  "Wow, that feels great. What is it?" (Go to 6)
+  "Thank you, I feel way better now. Let's keep going." (End)
+6. "Squazit dust. Squazits are tiny bugs that pollinate the Jeru flowers throughout the marsh. In the process, they leave behind trace amounts of this rejuvinating dust. It generally takes months to gather a usable amount, so it is very precious, but this seemed an apt occasion to use it."
+  "You didn't have to use something so valuable on me." (Go to 9)
+  "Oh! In that case, thank you very much." (Go to 10)
+7. "It truly is. Come back and visit in the springtime if you want to observe — for that matter, with the blessing of the Verdant Ember, you may even be permitted to participate." (naiaFriendship + 1) (Return to 2)
+8. "I understand that it must sound strange to an outsider, but we of Tenli revere nature. This is our way of giving something back to her, and of honoring the spirits." (Return to 2)
+9. "Nonsense. This is what the dust is for. Lead on; we are nearly there now." (End)
+10. "You are very welcome. Go on, now; we are nearly there." (End)
+
+else if(thiefStory)
+1. "We have traversed the whole marsh, but there has not been a single other flame to be found. It seems we will not be bringing your 'thief' to justice after all."
+  "I guess not. It's a shame, too; losing those goods will really set me back." (If naiaFriendship > 2, go to 2; else go to 3)
+  "Nope. Sorry I tricked you, but I needed to cross the marsh." (Go to 11)
+2. "There is no need to perpetuate the ruse. I may have been too fast to believe your fiction, but it is obvious by now that that is all it is. Nonetheless, I cannot bring myself to be upset about it. It was good to get away from the bustle of the lower village for a while, and you have been a pleasant travel partner. Given how far we have come, I suppose you were looking for the Verdant Ember, were you not?"
+  "Yes, that's what I'm here for." (Go to 4)
+  "Honestly, I don't really know what I'm doing here." (Go to 5)
+3. "Do not bother trying to fool me any longer. It has been obvious for some time that there was no thief. But despite your dishonesty, it was good to get away from the bustle of the lower village for a while. To have come this far, you must be after the Ember, am I correct?"
+  "That's right." (Go to 6)
+  "No, that's not it." (Go to 7)
+4. "I wish you had said as much at the outset, but it is of little importance now. The Ember is at the top of a shrine just past this cave. The great water spirit resides here, but it lies dormant most of the time. Go on now; I will follow." (End)
+5. "Then perhaps the Ember can offer you a sense of purpose. If you climb the shrine and embrace it, you will gain a blessing that we of Tenli are born with. You will be gain harmony with nature, and the marsh will become safe for you. It is a great honor for an outsider to attain. This way, the journey will not be a waste of time. Lead on, and I will follow." (End)
+6. "Well, that is a worthy enough reason to venture to the heart of the marsh. I can forgive your duplicity up to this point, but please be more forthright in future. The Ember is through this cave. Lead on." (End)
+7. "Then what could possibly motivate you to come all this way? You outsiders continue to perplex me. Since there is nothing else to attend, we should return to the village now."
+  "You go ahead. I'll head back later." (Go to 9)
+  "Er... actually, I do want to embrace the Ember." (Go to 8)
+8. "...You are beginning to annoy me, but fine. Go on." (End)
+9. "I cannot allow that. It will be unsafe for you to make the return trip without either my company or the blessing of the Ember."
+  "Okay, fine. I'll go embrace the Ember." (Go to 10)
+10. "Then lead on." (End)
+11. "So I surmised. Now is the time to come clean — why have you come here?"
+  "My reasons are my own. I appreciate your help getting here, but that fact stands." (Go to 12)
+  "I'm here to embrace the Verdant Ember." (Go to 14)
+12. "I cannot force you to talk, but if you want to get out of the marsh safely, you either need to come back with me or gain the blessing of the Verdant Ember, which is just ahead. Which is it going to be?"
+  "I'll embrace the Ember, then." (Go to 13)
+13. "Very well. Proceed." (End)
+14. "I see. I wish you had been forthright about that from the start, but at least this makes sense now. The Ember is through the cave just ahead. Lead on." (End)
+
+else
+1. "This is it, the heart of the marsh. We have covered all we can — did you ever find what you were looking for?"
+  "No, but I think I'm about to." (Go to 2)
+  "No, I didn't." (Go to 3)
+  "I guess it's time for me to come clean. I'm here in search of the Verdant Ember." (Go to 4)
+2. "Hm? What do you mean by that?"
+  "I think what I'm looking for is through this cave." (Go to 5)
+  "What I'm looking for is the Ember." (Go to 4)
+3. "Well, that is a shame. We should head back to the village, then. With luck, you may spot it on the way back."
+  "Hold on. Let's push on a little farther." (Go to 7)
+  "I'll just come clean. I'm here to embrace the Ember." (Go to 4)
+4. "Oh! That is different, then. You could have said so from the outset; I would have eagerly helped you all the same. More so, even. We of Tenli do not seek to be an obstacle to pilgrims seeking the Ember's embrace. Lead on, then, and I will follow." (End)
+5. "All that is past here is the shrine of the Verdant Ember, just through the cavern where the great water spirit slumbers. Are saying that you are a pilgrim, in search of the Ember?"
+  "Well, yes. That's what I'm saying." (Go to 6)
+6. "You could have said so sooner, but it is no matter. We are indeed close, so let us press on." (End)
+7. "Hm? Why? Only the shrine of the Verdant Ember lies ahead, and I am certain whatever you are looking for could not have neded up there."
+  "Well, actually, what I'm looking for is the Ember." (Go to 6)
+
+Shrine of the Ember
+
+if(naiaFriendship == 5)
+1. "The shrine of the Verdant Ember... it feels strange to visit it in this context."
+  "Strange? How do you mean?" (Go to 3)
+  "I hope that's not a bad thing." (Go to 2)
+2. "No, by no means. I am happy to be here with you; it is just unusual."
+  <i>Continue</i> (Go to 3)
+3. "Normally, we only come here for the tribe's most important gatherings. Specific ceremonies to honor the great water spirit, naming a new elder, that kind of thing. I was very young last time I was here. It was seventeen years ago, when my uncle Edorin became elder. There has been a Spirit Tide ceremony since then, but, much to my dismay, I was not in attendance."
+  "Why not?" (Go to 8)
+  "Hold on, you're losing me. Can I ask a few things?" (Go to 4)
+4. "Of course. Ask away."
+  if(!elderQuestion) "I didn't know your uncle was Tribe Tenli's elder. What's that like?" (Go to 5)
+  if(!tideQuestion) "What is a Spirit Tide ceremony?" (Go to 6)
+  if(!childQuestion) "Do children normally attend events like that?" (Go to 7)
+  if(numAsked > 0) "That's all I needed to know. So, why weren't you at the ceremony?" (Go to 8)
+5. "It is an honor to my family to have produced a flame so noble and wise. I admire him deeply, and I strive to learn all I can from him. Sadly, it does mean that I cannot see my uncle as often as I would like, but that is a necessary cost of his leadership." (elderQuestion = true) (numAsked + 1) (Return to 4)
+6. "Every twelve years, the spirit tide changes direction. The spirit tide... hm, I do not know how to explain it to an outsider. It is like, well, a tide that pulls the energies of different spirits nearer or farther from the physical world. During the ceremony, we beseech the great water spirit, our patron, to show us how the tides turn, so that we can plan for the next twelve years. I understand that that leaves an even greater number of questions unanswered, but that is as much as I feel comfortable explaining." (tideQuestion = true) (numAsked + 1) (Return to 4)
+7. "Of course. Aside from the fact that all the adults are in attendance, meaning it would be grossly irresponsible to leave the children all alone in the village, we believe in immersing our children in our ways as soon as possible. That way, the social, practical, and spiritual responsibilities of adulthood do not come crashing down all at once." (childQuestion = true) (numAsked + 1) (Return to 4)
+8. "I, along with other warriors of my tribe, was on a mission to repel a group of invaders from the south. We do not know just who they were, but someone from the 'civilized lands' clearly wanted the land and would do damage to it. Tribe Tenli could not abide that. Unfortunately, that was a mere month before the Spirit Tide ceremony, and the fighting lasted longer than could possibly have anticipated. We beat them back in the end, but only through prolonged fighting."
+  "That's awful. All the worse that you missed such an important occasion because of it." (Go to 9)
+  "Sounds you made a big sacrifice for the good of your tribe. That's truly noble of you." (Go to 13)
+9. "Indeed, but the wellbeing of the tribe and the marsh was more important. But I do not wish to dwell on that. We may regret the circumstances, but I am certain that neither I nor my fellow warriors regret what we did. That is enough to take solace in. I am sure you have your share of misfortunes as well, but they need not weigh heavy on you now."
+  "Well, I appreciate the encouragement." (Go to 10)
+  "Yeah, I've had some bad turns. One of them is why I'm here." (Go to 11)
+  "I can't say there's anything I really regret." (Go to 12)
+10. "You are very welcome, though you hardly need it now. This is the end of the road; the Ember is just above us. Go forth; embrace it." (Return to 15)
+11. "I see. Well, say no more. I have seen the strength of your character so far; you can certainly carry that burden. But perhaps this pilgrimage will help you let it go. And since we stand here at the shrine of the Ember, you should go on and do what you came to do." (Return to 15)
+12. "Then you have truly lived a charmed life. I hope that this pilgrimage has been a growing experience for you. Go on and embrace the Ember, and bring the journey to fruition." (Return to 15)
+13. "Thank you. But bear in mind, I was not alone; my fellow warriors deserve the same recognition. We made each other stronger than we could have been individually."
+  "Kind of like how you've helped make me stronger through this journey." (Go to 14)
+  "Well, the point remains. I think you did a good thing, and that deserves recognition." (Go to 15)
+14. "I am glad that I have been able to bolster your confidence, but I must disagree. This is something different. We have not been coequal in this journey. You are a pilgrim, and I am your guide, so if I have helped you, that is only expected. Hm... I suppose I have put a bit of a damper on things by saying so, so I apologize for that. Go on and embrace the Ember; that is what you came here for." (Return to 15)
+15. "Thank you. But we have dwelt enough on my past; you have a purpose here and now. You must embrace the Ember."
+  "Okay. I'm ready. I'll go for it." (Go to 16)
+  "Alright. So, how should I go about this?" (Go to 17)
+16. "Excellent. Be mindful on the climb up, as many ledges have weakened over time. Though, actually... do you see that platform above us?" (Return to 17)
+17. "To reach the Ember, one must climb up a series of ledges on the central pillar. Many of them have grown weak over time, making it somewhat treacherous. Though there may be another way — see that platform above us?"
+  "Yes, I see it." (Go to 18)
+18. "It would be must faster to start from there. It is too high up to reach unassisted, of course, but... well, I could assist you."
+  "You'd do that?" (Go to 19)
+  "Wouldn't that be violating the spirit of the trial?" (Go to 20)
+19. "Of course. I have... well, I suppose I have come to respect you over the course of this journey. I want to see you succeed. Come now, I will give you a boost. Get ready to hop up there." (End)
+20. "The spirit of the trial is to test one's determination and character. I believe you have already proven those thoroughly. Get ready to jump up to the platform; I am going to give you a boost." (End)
+
+else if(naiaFriendship > 2)
+1. "Here it is: The shrine of the Verdant Ember. It has been so long since I was last here."
+  "When <i>were</i> you last here?" (Go to 2)
+  "It's... taller than I was expecting." (Go to 20)
+2. "We gather here for the most sacred of occasions. When I was very young, my parents brought me here when my uncle was named as elder, after Elder Rano passed away. That was... seventeen years ago. Yet it seems so recent in memory."
+  "I know what you mean. I have memories from my childhood that still feel like yesterday." (Go to 3)
+  "Wait, your uncle is the elder of Tribe Tenli?" (Go to 7)
+3. "Time is a strange thing, is it not? Like a living being, winding and straightening as it sees fit. I am sometimes told by my elders that I am wise beyond my years. I remember the long hours spent weaving and gathering, listening to the histories and tall tales of Fenma the Storyteller, watching my parents as they discussed tribal matters with other adults during gatherings to vote. That time was long for me. Others my age say they feel as though childhood was there and gone in an instant. I cannot help wondering if, perhaps, time was less generous to those we call 'immature.'"
+  "That seems pretty far-fetched to me." (Go to 4)
+  "As someone who's often called immature, I think you're right. I always feel like I'm expected to know more than I possibly could by now." (Go to 5)
+  "I don't suppose there's any way of knowing for sure, but it's a fascinating thought." (Go to 6)
+4. "I understand. It just captures my thoughts sometimes. Back to the situation at hand, you have an Ember to embrace."
+  <i>Continue</i> (Go to 14)
+5. "I see. Thank you for sharing that; it feels good to know that I am not just musing wildly. But I have spoken enough; you are here to embrace the Ember."
+  <i>Continue</i> (Go to 14)
+6. "Indeed it is. You are right that we cannot know for sure, but perhaps an answer will become clearer in time. In any case, you did not come here to discuss philosophy with me. You are here for the Ember."
+  <i>Continue</i> (Go to 14)
+7. "He is, yes."
+  "If that's the case, what are you doing as a town guard? Shouldn't you be in a position of greater authority?" (Go to 8)
+  "That's all you have to say about it?" (Go to 9)
+  "That must be an honor." (Go to 10)
+8. "I do not understand the question. What does my uncle's authority have to do with me?"
+  "I just thought that since you have that connection, you'd have a nicer job. That's how it is where I come from." (Go to 11)
+9. "Yes. It is what it is; I see no good reason to create bombast about it."
+  "I can respect that. Bombast can be tiresome, and I would know." (Go to 12)
+10. "It is, but perhaps not for the reason you think. My family and I are honored to have him among our number, but that is because of his wisdom and virtue, not because of his power."
+  "I see. That's not how it is in the Northern Province; people are very much concerned with power there." (Go to 13)
+11. "That sounds like a foolish way of doing things. Why should one be given something for a reason other than their own merit? No matter; let us get back to the purpose of this trip. You are here to embrace the Verdant Ember."
+  <i>Continue</i> (Go to 14)
+12. "Indeed. I, too, have little patience for vacant words. And on that note, we should address your purpose for being here: the Ember."
+  <i>Continue</i> (Go to 14)
+13. "I see. That seems... misguided to me. Virtue should always come first. The pursuit of power for its own sake could lead one to do anything, no matter how vile. But enough of that; you want to embrace the Ember, right?"
+  <i>Continue</i> (Go to 14)
+14. "The Verdant Ember is enshrined at the top of this column. The climb is intended as a test of determination. It is rather arduous, and there are many ledges that have weakened with time. You will need to move past those quickly. Though... do you see that platform right above us?"
+  "Yes, I see it." (Go to 15)
+  "What about it?" (Go to 15)
+15. "It is a much shorter climb from there. It is too high to jump to, of course, but I could help you reach it."
+  "That would be great. Thank you." (Go to 16)
+  "If the climb is a test, wouldn't that be cheating?" (Go to 17)
+16. "Very well. Here, I will give you a boost. Be ready to jump." (End)
+17. "Technically, yes. But... I believe you are a good person. You deserve to reach the Ember."
+  "Well, if you feel good about it, I'm ready to jump up there." (Go to 18)
+  "Wow, I'm... well, I'm honored that you would say that. Thank you, Naia." (Go to 19)
+18. "Very well. Get ready to jump." (End)
+19. "You are quite welcome. Now, I am going to give you a boost — get ready to jump." (End)
+20. "We of Tenli elevate things we hold in high esteem. The Verdant Ember is central to our existence in the marsh. It is for that reason that we gather here for the most important of our tribe's ceremonies. The last time I was here was seventeen years ago, when my uncle was named elder, yet it feels like no time has passed at all." (Return to 2)
+
+else if(naiaFriendship > -1)
+1. "Here we are. The Shrine of the Verdant Ember. The Ember itself is at the top, so you have a bit of a climb ahead of you."
+  "Guess I'd better get to it, then." (Go to 2)
+  "Any tips on getting to the top safely?" (Go to 3)
+2. "I suppose you should. I will return to the village — farewell, outsider." (naiaEnd = "Neutral") (End)
+3. "Some of the ledges are quite weak, so you will need to cross them quickly. Such ledges should be easily identifiable by cracks and similar signs. It would be wise to look ahead and plan your actions before committing to them."
+  "Alright, I'll bear that in mind." (Go to 4)
+4. "Very good. I must return to Tenli Village, but I wish you luck on your climb. Farewell." (naiaEnd = "Neutral") (End)
+
+else
+1. "The Ember lies above. You must climb to reach it."
+  "Alright." (Go to 2)
+  "Are you... okay? You seem kind of terse." (Go to 3)
+2. "I will return to the village now. Goodbye." (End) (naiaEnd = "Bad")
+3. "I will speak frankly, outsider. You have been an unpleasant travelling partner. I sincerely hope that embracing the Verdant Ember enlightens your perspective, if only a little. Farewell."
+  <i>Proceed toward the Ember</i> (End) (naiaEnd = "Bad")
+  "Hold on. I realize I've been pretty disrespectful before, and I'm sorry. How can I be better in the future?" (Go to 4)
+4. "Just... keep your mind open to others' perspectives. Strive to minimize the hurt around you and not cause any yourself. To that end, often the best thing you can do is simply listen." <i>Naia sighs.</i> "I wish you the best on your travels, outsider. Good luck on the climb." (naiaEnd = "Neutral") (End)
+
+From the Platform
+
+if(naiaFriendship == 5)
+1. "I need to return to Tenli Village now. It was a sincere pleasure to travel with you, outsider..." <i>Naia sighs</i> "I... I never deigned to ask your name. Here in the marsh, we take it as a given that outsiders will be here one day and gone the next. Itinerants or exploiters, never respecting us or our home. It is easy to be jaded. But you are not an ordinary outsider, and I would have you as a friend. So please... tell me your name."
+  "My name is Wick." (Go to 2)
+  "I'd like to tell you, truly. But my name carries the scorn of some powerful people, so I'm afraid I would make an inauspicious friend." (Go to 3)
+2. "Wick... a strange name, but one I will not forget. I must return now, but I pray a lasting blessing on you. Farewell, Wick." (naiaEnd = "VeryGood") (End)
+3. "I see..." <i>Naia is silent for a long moment</i> "You have always respected my knowledge of my own domain, so I must respect yours. If you say it is so, I trust your reasons. But... you are a seeker after the Ember, after strength and wisdom. So that is what I shall call you. Farewell, Seeker." (naiaEnd = "VeryGood") (End)
+
+else
+1. "It was a pleasure travelling with you, outsider. Perhaps we will meet again someday."
+  "Perhaps we will. Farewell, Naia." (naiaEnd = "Good") (End)
+  "We will. I'll make sure of it." (Go to 2)
+2. "Then I look forward to that day. Until then, I pray a blessing on your travels." (naiaEnd = "Good") (End)
 
 Merchant Company Agent
 
@@ -138,7 +417,7 @@ Context: Wick has just begun his journey into the marsh. On the main path toward
   "What was that about a village?" (Go to 4)
   "Thanks, it was delicious. Farewell." (End)
 3. "Name's Renzel. I work for the Ignis Company, under the House of Ardor. I'm headed to Tenli Village to negotiate a trade deal with the tribe's elder." (askedWho = true)
-  (if !askedWho)"Who are you?" (Go to 3)
+  (if !askedWho) "Who are you?" (Go to 3)
   (if !askedVillage) "Can you tell me about Tenli Village?" (Go to 4)
   (if !askedTrade) "What do you trade with the natives?" (Go to 5)
   "Does the Ignis Company do business with the other houses?" (Go to 6)
@@ -153,13 +432,13 @@ Context: Wick has just begun his journey into the marsh. On the main path toward
   "Thanks for the offer, but I've got a lot on my plate already." (Go to 24)
   "That sounds like something I can do." (Go to 25)
 8. "That so? What's your name?"
-  "Wixellus Ire." (+small karma) (Go to 9)
+  "Wixellus Ire." (karma + 1) (Go to 9)
   "Ekellus Ire." (Go to 10)
   "Kadis Vim." (Go to 11)
   "Habaldt Ardor." (Go to 12)
 9. "Wixellus... the exiled Ire kid? Heh, well, you're either pretty dense or too honest for your own good, telling me that. Guess now I know why you didn't fit in. Still, I don't think you're in any position to be negotiating trade deals. But with that said, there may be a way I can help you out." <i>Gives Ignis Company card</i> "Take that to our office in Dewyn, and tell 'em Renzel sent you. Your exile status would complicate working in Gray Coast, but no one will know about that out in the plains. Go on and make something of yourself, spark — you might have a bright future ahead of you yet." (End)
-10. "Ah, well met, then, Mr. Ire. So, what's your proposition?"
-11. "Oh, Mr. Vim! I heard about your recent duel — whelp had it coming, I say. Can't get anywhere in the world if you don't learn some respect. So, how can I help you?"
+10. "Ah, well met, then, Mr. Ire. So, what's your proposition?" (End)
+11. "Oh, Mr. Vim! I heard about your recent duel — whelp had it coming, I say. Can't get anywhere in the world if you don't learn some respect. So, how can I help you?" (End)
 12. "Nah, I'd know if you were an Ardor boy. Try again."
 "Uh, never mind." (Go to 13)
 "Wixellus Ire." (Go to 14)
@@ -201,7 +480,10 @@ Context: Wick has just begun his journey into the marsh. On the main path toward
   "Hm, maybe I should go somewhere else, then." (Go to 30)
 29. "I see. You've got some hard travels ahead of you, then. I probably shouldn't be giving this away, but you need it more than I do." <i>Gives flash powder x 4</i> "Use it to gain a surge of heat. It should hurt any creatures that might attack you, or at least scare them away. Best of luck to you finding your way in life, spark. It's no small task." (End)
 30. "Perhaps so. I would suggest the plains; it's most similar to the north. Why don't you take this?" <i>Gives Ignis Company card</i> "If you ever visit Dewyn, the capital of the Plains Province, stop by our office there and tell them I sent you. The Ignis Company is always hiring. Best of luck to you finding your way in life, spark. It's no small task." (End)
-31. "Is that so? I had no idea two of the Ire boys were on bad terms with the family. Things must be going pretty bad for your house.
+31. "Is that so? I had no idea two of the Ire boys were on bad terms with the family. Things must be going pretty bad for your house. What is it that's wrong between you and your family? Give me the broad strokes — I don't want to know your family's private affairs."
+  "I don't burn hot enough to meet my family's standards, so they keep me busy with petty tasks to keep me out of the public view."
+  "I was involved in a bit of a scandal with one of the girls from the House of Mercy. My family has held me in low regard since then for damaging the relations between our houses."
+  "I've never liked being told how to act or what to do, so I was always the black sheep."
 
 Council
 
@@ -217,7 +499,7 @@ Hungry Villager
 
 Context: Located in the market square near several vendors from out of town.
 1."I wish the coal vendors would come more often. I have that craving that only coal can satisfy."
-  (if Wick has coal) "I have some coal you could eat. Here." (+ small karma) (Go to 2)
+  (if Wick has coal) "I have some coal you could eat. Here." (karma + 1) (Go to 2)
   "What's wrong with Tenli food?" (Go to 3)
   "That's rough." (Go to 4)
 2. "My thanks, friend! You are a lifesaver." (Munches coal) "Mmm, delicious." (End)
@@ -234,3 +516,80 @@ Context: Located at the west side of the market.
 2. "I am so glad to hear it." (End)
 3. "Then it is good that you are here now. I hope you will not have to revisit those places." (End)
 4. "Oh, I am so sorry you think so. I know the marsh can be inhospitable to outsiders. I hope it is not too unpleasant for you." (End)
+
+Nostalgic Villager
+
+Context: Located in the plaza, next to the bridge.
+1. "Things used to be so much quieter down here. Now it seems as though there is no end to the comings and goings. I do miss being able to sit and watch the stream in peace."
+  "That does sound like a better day." (Go to 2)
+  "Didn't you ever get bored?" (Go to 3)
+2. "Indeed. I am not blind to the material benefits of trade, but I hope the village does not become any more... I think you call it 'urbanized.' I want my children to respect nature and to respect Tenli traditions. I suppose I will have to move back to the treetops; this place looks less familiar every day."
+3. "No. There is nothing boring about the serenity of nature. And the more we concede to outsiders, the less natural this village becomes. I remember when there was not a single ounce of worked stone in this place. I hold no grudges against outsiders, but I cannot help thinking that in forming bonds with the north, we have lost a little of our bond with the marsh."
+
+Bitter Villager
+
+Context: Located in the slums, near the eastern gate.
+1. "What do <i>you</i> want?"
+  "Whoa, why so hostile?" (Go to 2)
+  "On second thought, I think I'll leave you alone." (End)
+2. "Hah! 'Hostile,' as if I were the aggressor. I am not the one coming into <i>your</i> home, making <i>you</i> build needless extravagances, forcing <i>your</i> people to debase themselves to accommodate me! We never needed these stone buildings, that garish council lodge, and <i>especially</i> not a jail. You northerners have no respect for anyone. Get out of here, and take your greed and crime elsewhere!"
+
+Odd Villager
+
+Context: Located in the plaza, ambling about.
+1. "One pace, maybe two... left at this patch of dirt, three paces, and... hm, no, that's not it."
+  "What are you doing?" (Go to 2)
+  (Leave him be) (End)
+2. "What? Oh, hello, there. I dropped a pouch of squazit ichor on the ground somewhere in the plaza, and I cannot seem to find it."
+  if(!ask) "What's a squazit?" (Go to 3)
+  "Maybe I can help you find it." (Go to 4)
+  "Well, good luck with that." (End)
+3. "Squazits are bugs found very high up in the treetops. Their ichor keeps the water wraiths away." (ask = true) (Return to 2)
+4. "I would be grateful. Please tell me if you find it." (End)
+
+
+
+Worried Northerner
+
+Context: Pacing around on the eastern side of the plaza.
+if(firstEncounterWorried)
+1. "Hey! Have you heard of the Black Ice Company?" (firstEncounterWorried = false)
+  "No." (Go to 2)
+  "What, the mercenary company from the mountains?" (Go to 3)
+2. "Well, you should have. They're the most ruthless mercenaries there are, and rumor is that they've been spotted on Mt. Yrden recently."
+  "So what?" (Go to 4)
+  "What are they doing there?" (Go to 5)
+  if(!blackIceRumorKnown) "Where exactly did you hear this rumor?" (Go to 6)
+3. "That's the one. Rumor has it that they were spotted on Mt. Yrden not long ago." (Return to 2)
+4. "So what? <i>So what?!</i> Mt. Yrden is only a few miles south of the border between the Northern Province and the Mountain Province! What if they move north? What if they're coming to attack us? I need to get home so I can move my family to the plains, but the road is blocked!"
+  "You're really going to uproot your family over a rumor?" (Go to 7)
+  if(!blackIceRumorKnown) "Hold on, that's a big decision to make. How do you know your info is good?" (Go to 9)
+  "That sounds like a good idea. I wish you luck." (Go to 8)
+5. "No one knows for certain, but wherever they go, they do violence. They don't normally come this far north; they could be headed for the Northern Province. I want to get home so I can take my family to the plains, at least for a little while, but the road back is blocked because of the storm." (Return to 4)
+6. "I heard it from the jeweler, who came here from the mountains." (blackIceRumorKnown = true) (Return to 2)
+7. "It may sound crazy, but I have a bad feeling that things aren't going to be safe near the border, and my intuition hasn't been wrong before. I need to get back home, and soon." (End)
+8. "Thank you. If only the flooding would recede; I don't have time to waste sitting around here."
+9. "I heard it from the jeweler. She came here from the mountains just a few days ago, so I'm sure she could tell you more." (blackIceRumorKnown = true) (Return to 4)
+
+else
+1. "I wish those flames working on clearing the road would work faster..."
+  "I hope it works out for you. Goodbye." (End)
+  if(!blackIceRumorKnown) "Say, where did you hear that rumor about the Black Ice Company's location?" (Go to 2)
+2. "I heard it from the jeweler. She came here from the mountains just a few days ago, so I'm sure she could tell you more." (blackIceRumorKnown = true) (End)
+
+Absent-minded Villager
+
+if(absentMindedEncounter == 0)
+1. "Hm. I wonder why gems are so sparkly. Do little spirits live inside them? Hm..." (absentMindedEncounter + 1) (End)
+
+else if(absentMindedEncounter == 1)
+1. "They say gems are a type of rock. But rocks are not alive, so if gems have spirits, that is impossible. Unless a rock is a dead gem? Hm..." (absentMindedEncounter + 1) (End)
+
+else if(absentMindedEncounter == 2)
+1. "But then, spirits do not die. Perhaps they vacate the gems, and they become rocks? Hm..." (absentMindedEncounter + 1) (End)
+
+else if(absentMindedEncounter == 3)
+1. "And if the spirit leaves a gem, does it go back to the realm of spirits? Or is it forced to wander here, invisible, forever? Hm..." (absentMindedEncounter + 1) (End)
+
+else
+1. "Hm..." (End)

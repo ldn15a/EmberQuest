@@ -1,0 +1,108 @@
+if(naiaFriendship == 5)
+1. "The shrine of the Verdant Ember... it feels strange to visit it in this context."
+  "Strange? How do you mean?" (Go to 3)
+  "I hope that's not a bad thing." (Go to 2)
+2. "No, by no means. I am happy to be here with you; it is just unusual."
+  <i>Continue</i> (Go to 3)
+3. "Normally, we only come here for the tribe's most important gatherings. Specific ceremonies to honor the great water spirit, naming a new elder, that kind of thing. I was very young last time I was here. It was seventeen years ago, when my uncle Edorin became elder. There has been a Spirit Tide ceremony since then, but, much to my dismay, I was not in attendance."
+  "Why not?" (Go to 8)
+  "Hold on, you're losing me. Can I ask a few things?" (Go to 4)
+4. "Of course. Ask away."
+  if(!elderQuestion) "I didn't know your uncle was Tribe Tenli's elder. What's that like?" (Go to 5)
+  if(!tideQuestion) "What is a Spirit Tide ceremony?" (Go to 6)
+  if(!childQuestion) "Do children normally attend events like that?" (Go to 7)
+  if(numAsked > 0) "That's all I needed to know. So, why weren't you at the ceremony?" (Go to 8)
+5. "It is an honor to my family to have produced a flame so noble and wise. I admire him deeply, and I strive to learn all I can from him. Sadly, it does mean that I cannot see my uncle as often as I would like, but that is a necessary cost of his leadership." (elderQuestion = true) (numAsked + 1) (Return to 4)
+6. "Every twelve years, the spirit tide changes direction. The spirit tide... hm, I do not know how to explain it to an outsider. It is like, well, a tide that pulls the energies of different spirits nearer or farther from the physical world. During the ceremony, we beseech the great water spirit, our patron, to show us how the tides turn, so that we can plan for the next twelve years. I understand that that leaves an even greater number of questions unanswered, but that is as much as I feel comfortable explaining." (tideQuestion = true) (numAsked + 1) (Return to 4)
+7. "Of course. Aside from the fact that all the adults are in attendance, meaning it would be grossly irresponsible to leave the children all alone in the village, we believe in immersing our children in our ways as soon as possible. That way, the social, practical, and spiritual responsibilities of adulthood do not come crashing down all at once." (childQuestion = true) (numAsked + 1) (Return to 4)
+8. "I, along with other warriors of my tribe, was on a mission to repel a group of invaders from the south. We do not know just who they were, but someone from the 'civilized lands' clearly wanted the land and would do damage to it. Tribe Tenli could not abide that. Unfortunately, that was a mere month before the Spirit Tide ceremony, and the fighting lasted longer than could possibly have anticipated. We beat them back in the end, but only through prolonged fighting."
+  "That's awful. All the worse that you missed such an important occasion because of it." (Go to 9)
+  "Sounds you made a big sacrifice for the good of your tribe. That's truly noble of you." (Go to 13)
+9. "Indeed, but the wellbeing of the tribe and the marsh was more important. But I do not wish to dwell on that. We may regret the circumstances, but I am certain that neither I nor my fellow warriors regret what we did. That is enough to take solace in. I am sure you have your share of misfortunes as well, but they need not weigh heavy on you now."
+  "Well, I appreciate the encouragement." (Go to 10)
+  "Yeah, I've had some bad turns. One of them is why I'm here." (Go to 11)
+  "I can't say there's anything I really regret." (Go to 12)
+10. "You are very welcome, though you hardly need it now. This is the end of the road; the Ember is just above us. Go forth; embrace it." (Return to 15)
+11. "I see. Well, say no more. I have seen the strength of your character so far; you can certainly carry that burden. But perhaps this pilgrimage will help you let it go. And since we stand here at the shrine of the Ember, you should go on and do what you came to do." (Return to 15)
+12. "Then you have truly lived a charmed life. I hope that this pilgrimage has been a growing experience for you. Go on and embrace the Ember, and bring the journey to fruition." (Return to 15)
+13. "Thank you. But bear in mind, I was not alone; my fellow warriors deserve the same recognition. We made each other stronger than we could have been individually."
+  "Kind of like how you've helped make me stronger through this journey." (Go to 14)
+  "Well, the point remains. I think you did a good thing, and that deserves recognition." (Go to 15)
+14. "I am glad that I have been able to bolster your confidence, but I must disagree. This is something different. We have not been coequal in this journey. You are a pilgrim, and I am your guide, so if I have helped you, that is only expected. Hm... I suppose I have put a bit of a damper on things by saying so, so I apologize for that. Go on and embrace the Ember; that is what you came here for." (Return to 15)
+15. "Thank you. But we have dwelt enough on my past; you have a purpose here and now. You must embrace the Ember."
+  "Okay. I'm ready. I'll go for it." (Go to 16)
+  "Alright. So, how should I go about this?" (Go to 17)
+16. "Excellent. Be mindful on the climb up, as many ledges have weakened over time. Though, actually... do you see that platform above us?" (Return to 17)
+17. "To reach the Ember, one must climb up a series of ledges on the central pillar. Many of them have grown weak over time, making it somewhat treacherous. Though there may be another way — see that platform above us?"
+  "Yes, I see it." (Go to 18)
+18. "It would be must faster to start from there. It is too high up to reach unassisted, of course, but... well, I could assist you."
+  "You'd do that?" (Go to 19)
+  "Wouldn't that be violating the spirit of the trial?" (Go to 20)
+19. "Of course. I have... well, I suppose I have come to respect you over the course of this journey. I want to see you succeed. Come now, I will give you a boost. Get ready to hop up there." (End)
+20. "The spirit of the trial is to test one's determination and character. I believe you have already proven those thoroughly. Get ready to jump up to the platform; I am going to give you a boost." (End)
+
+else if(naiaFriendship > 2)
+1. "Here it is: The shrine of the Verdant Ember. It has been so long since I was last here."
+  "When <i>were</i> you last here?" (Go to 2)
+  "It's... taller than I was expecting." (Go to 20)
+2. "We gather here for the most sacred of occasions. When I was very young, my parents brought me here when my uncle was named as elder, after Elder Rano passed away. That was... seventeen years ago. Yet it seems so recent in memory."
+  "I know what you mean. I have memories from my childhood that still feel like yesterday." (Go to 3)
+  "Wait, your uncle is the elder of Tribe Tenli?" (Go to 7)
+3. "Time is a strange thing, is it not? Like a living being, winding and straightening as it sees fit. I am sometimes told by my elders that I am wise beyond my years. I remember the long hours spent weaving and gathering, listening to the histories and tall tales of Fenma the Storyteller, watching my parents as they discussed tribal matters with other adults during gatherings to vote. That time was long for me. Others my age say they feel as though childhood was there and gone in an instant. I cannot help wondering if, perhaps, time was less generous to those we call 'immature.'"
+  "That seems pretty far-fetched to me." (Go to 4)
+  "As someone who's often called immature, I think you're right. I always feel like I'm expected to know more than I possibly could by now." (Go to 5)
+  "I don't suppose there's any way of knowing for sure, but it's a fascinating thought." (Go to 6)
+4. "I understand. It just captures my thoughts sometimes. Back to the situation at hand, you have an Ember to embrace."
+  <i>Continue</i> (Go to 14)
+5. "I see. Thank you for sharing that; it feels good to know that I am not just musing wildly. But I have spoken enough; you are here to embrace the Ember."
+  <i>Continue</i> (Go to 14)
+6. "Indeed it is. You are right that we cannot know for sure, but perhaps an answer will become clearer in time. In any case, you did not come here to discuss philosophy with me. You are here for the Ember."
+  <i>Continue</i> (Go to 14)
+7. "He is, yes."
+  "If that's the case, what are you doing as a town guard? Shouldn't you be in a position of greater authority?" (Go to 8)
+  "That's all you have to say about it?" (Go to 9)
+  "That must be an honor." (Go to 10)
+8. "I do not understand the question. What does my uncle's authority have to do with me?"
+  "I just thought that since you have that connection, you'd have a nicer job. That's how it is where I come from." (Go to 11)
+9. "Yes. It is what it is; I see no good reason to create bombast about it."
+  "I can respect that. Bombast can be tiresome, and I would know." (Go to 12)
+10. "It is, but perhaps not for the reason you think. My family and I are honored to have him among our number, but that is because of his wisdom and virtue, not because of his power."
+  "I see. That's not how it is in the Northern Province; people are very much concerned with power there." (Go to 13)
+11. "That sounds like a foolish way of doing things. Why should one be given something for a reason other than their own merit? No matter; let us get back to the purpose of this trip. You are here to embrace the Verdant Ember."
+  <i>Continue</i> (Go to 14)
+12. "Indeed. I, too, have little patience for vacant words. And on that note, we should address your purpose for being here: the Ember."
+  <i>Continue</i> (Go to 14)
+13. "I see. That seems... misguided to me. Virtue should always come first. The pursuit of power for its own sake could lead one to do anything, no matter how vile. But enough of that; you want to embrace the Ember, right?"
+  <i>Continue</i> (Go to 14)
+14. "The Verdant Ember is enshrined at the top of this column. The climb is intended as a test of determination. It is rather arduous, and there are many ledges that have weakened with time. You will need to move past those quickly. Though... do you see that platform right above us?"
+  "Yes, I see it." (Go to 15)
+  "What about it?" (Go to 15)
+15. "It is a much shorter climb from there. It is too high to jump to, of course, but I could help you reach it."
+  "That would be great. Thank you." (Go to 16)
+  "If the climb is a test, wouldn't that be cheating?" (Go to 17)
+16. "Very well. Here, I will give you a boost. Be ready to jump." (End)
+17. "Technically, yes. But... I believe you are a good person. You deserve to reach the Ember."
+  "Well, if you feel good about it, I'm ready to jump up there." (Go to 18)
+  "Wow, I'm... well, I'm honored that you would say that. Thank you, Naia." (Go to 19)
+18. "Very well. Get ready to jump." (End)
+19. "You are quite welcome. Now, I am going to give you a boost — get ready to jump." (End)
+20. "We of Tenli elevate things we hold in high esteem. The Verdant Ember is central to our existence in the marsh. It is for that reason that we gather here for the most important of our tribe's ceremonies. The last time I was here was seventeen years ago, when my uncle was named elder, yet it feels like no time has passed at all." (Return to 2)
+
+else if(naiaFriendship > -1)
+1. "Here we are. The Shrine of the Verdant Ember. The Ember itself is at the top, so you have a bit of a climb ahead of you."
+  "Guess I'd better get to it, then." (Go to 2)
+  "Any tips on getting to the top safely?" (Go to 3)
+2. "I suppose you should. I will return to the village — farewell, outsider." (naiaEnd = Neutral) (End)
+3. "Some of the ledges are quite weak, so you will need to cross them quickly. Such ledges should be easily identifiable by cracks and similar signs. It would be wise to look ahead and plan your actions before committing to them."
+  "Alright, I'll bear that in mind." (Go to 4)
+4. "Very good. I must return to Tenli Village, but I wish you luck on your climb. Farewell." (naiaEnd = Neutral) (End)
+
+else
+1. "The Ember lies above. You must climb to reach it."
+  "Alright." (Go to 2)
+  "Are you... okay? You seem kind of terse." (Go to 3)
+2. "I will return to the village now. Goodbye." (End) (naiaEnd = Bad)
+3. "I will speak frankly, outsider. You have been an unpleasant travelling partner. I sincerely hope that embracing the Verdant Ember enlightens your perspective, if only a little. Farewell."
+  <i>Proceed toward the Ember</i> (End) (naiaEnd = Bad)
+  "Hold on. I realize I've been pretty disrespectful before, and I'm sorry. How can I be better in the future?" (Go to 4)
+4. "Just... keep your mind open to others' perspectives. Strive to minimize the hurt around you and not cause any yourself. To that end, often the best thing you can do is simply listen." <i>Naia sighs.</i> "I wish you the best on your travels, outsider. Good luck on the climb." (naiaEnd = Neutral) (End)

@@ -1,0 +1,9 @@
+1. "One pace, maybe two... left at this patch of dirt, three paces, and... hm, no, that's not it."
+  "What are you doing?" (Go to 2)
+  (Leave him be) (End)
+2. "What? Oh, hello, there. I dropped a pouch of squazit ichor on the ground somewhere in the plaza, and I cannot seem to find it."
+  if(!ask) "What's a squazit?" (Go to 3)
+  "Maybe I can help you find it." (Go to 4)
+  "Well, good luck with that." (End)
+3. "Squazits are bugs found very high up in the treetops. Their ichor keeps the water wraiths away." (ask = true) (Return to 2)
+4. "I would be grateful. Please tell me if you find it." (End)
