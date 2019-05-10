@@ -1,4 +1,4 @@
-Mini boss
+X Mini boss
 Open the gate!
 Item support dialogue parser
 PLAYER CHANGES COLOR
@@ -9,3 +9,4 @@ Map end scroll
 Area transition
 Various NPC effects
 X Health Graphics - Fire
+Parallax
