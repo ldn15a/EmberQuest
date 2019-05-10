@@ -5,11 +5,11 @@ if(firstEncounterWorried)
 2. "Well, you should have. They're the most ruthless mercenaries there are, and rumor is that they've been spotted on Mt. Yrden recently."
   "So what?" (Go to 4)
   "What are they doing there?" (Go to 5)
-  if(!blackIceRumorKnown) "Where exactly did you hear this rumor?" (Go to 6)
+  (if blackIceRumorKnown, hide) "Where exactly did you hear this rumor?" (Go to 6)
 3. "That's the one. Rumor has it that they were spotted on Mt. Yrden not long ago." (Return to 2)
 4. "So what? <i>So what?!</i> Mt. Yrden is only a few miles south of the border between the Northern Province and the Mountain Province! What if they move north? What if they're coming to attack us? I need to get home so I can move my family to the plains, but the road is blocked!"
   "You're really going to uproot your family over a rumor?" (Go to 7)
-  if(!blackIceRumorKnown) "Hold on, that's a big decision to make. How do you know your info is good?" (Go to 9)
+  (if blackIceRumorKnown, hide) "Hold on, that's a big decision to make. How do you know your info is good?" (Go to 9)
   "That sounds like a good idea. I wish you luck." (Go to 8)
 5. "No one knows for certain, but wherever they go, they do violence. They don't normally come this far north; they could be headed for the Northern Province. I want to get home so I can take my family to the plains, at least for a little while, but the road back is blocked because of the storm." (Return to 4)
 6. "I heard it from the jeweler, who came here from the mountains." (blackIceRumorKnown = true) (Return to 2)
@@ -20,5 +20,5 @@ if(firstEncounterWorried)
 else
 1. "I wish those flames working on clearing the road would work faster..."
   "I hope it works out for you. Goodbye." (End)
-  if(!blackIceRumorKnown) "Say, where did you hear that rumor about the Black Ice Company's location?" (Go to 2)
+  (if blackIceRumorKnown, hide) "Say, where did you hear that rumor about the Black Ice Company's location?" (Go to 2)
 2. "I heard it from the jeweler. She came here from the mountains just a few days ago, so I'm sure she could tell you more." (blackIceRumorKnown = true) (End)
